@@ -1,4 +1,4 @@
-# IT Company Website
+# Steps-Infotech Website
 
 This repository contains the source code for our college Software Development project. The project is built using React and follows a Git workflow where each team member works on their own feature branch.
 
@@ -6,7 +6,7 @@ This repository contains the source code for our college Software Development pr
 
  Project Setup
 
- 1. Clone the repository
+# 1. Clone the repository
 
 ```bash
 git clone <repository-url>
@@ -16,13 +16,13 @@ Replace `<repository-url>` with the GitHub repository link.
 
 ---
 
- 2. Open the project
+# 2. Open the project
 
 Open the project folder in VS Code.
 
 ---
 
- 3. Install dependencies
+# 3. Install dependencies
 
 ```bash
 npm install
@@ -32,7 +32,7 @@ This will install all required packages, including `node_modules`.
 
 ---
 
- 4. Run the project
+# 4. Run the project
 
 If using Vite:
 
@@ -48,7 +48,7 @@ npm start
 
 ---
 
- Project Structure
+# Project Structure
 
 ```
 src
@@ -65,9 +65,9 @@ Each member should work only inside their assigned page/module unless instructed
 
 ---
 
- Git Workflow
+# Git Workflow
 
- Step 1: Update your local repository
+# Step 1: Update your local repository
 
 Before starting work every day:
 
@@ -78,7 +78,7 @@ git pull origin main
 
 ---
 
- Step 2: Switch to your feature branch
+# Step 2: Switch to your feature branch
 
 If your branch already exists:
 
@@ -106,7 +106,7 @@ git checkout -b feature-home
 
 ---
 
- Step 3: Work on your assigned module
+# Step 3: Work on your assigned module
 
 Only modify files related to your assigned page.
 
@@ -120,7 +120,7 @@ Avoid modifying other members' files.
 
 ---
 
- Step 4: Save your progress
+# Step 4: Save your progress
 
 After completing a meaningful feature:
 
@@ -137,7 +137,7 @@ git commit -m "Added Home hero section"
 
 ---
 
- Step 5: Push your branch
+# Step 5: Push your branch
 
 First push:
 
@@ -153,7 +153,7 @@ git push
 
 ---
 
- Step 6: Keep your branch updated
+# Step 6: Keep your branch updated
 
 Whenever changes are merged into `main`:
 
@@ -169,7 +169,7 @@ Resolve conflicts if Git asks you to.
 
 ---
 
- Step 7: Create a Pull Request
+# Step 7: Create a Pull Request
 
 After completing your assigned module:
 
@@ -197,7 +197,7 @@ After completing your assigned module:
 
 ---
 
- Branch Naming
+# Branch Naming
 
 Use the following format:
 
@@ -217,7 +217,7 @@ feature-contact
 
 ---
 
- Commit Message Examples
+# Commit Message Examples
 
 Good:
 
@@ -241,7 +241,7 @@ abc
 
 ---
 
- Team Responsibilities
+# Team Responsibilities
 
 Each team member is responsible for:
 
