@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-header-footer: #061D24;
+  --color-info-bg: #E3FAFB;
+  --color-btn: #0F7C7A;
+  --color-desc-bg: #155361;
+
+  --font-heading: "Boldonse", sans-serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
