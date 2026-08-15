@@ -1,15 +1,15 @@
-import Home from "./pages/home/home.jsx";
+import { Routes, Route } from "react-router-dom";
 
-import Portfolio from "./pages/portfolio/portfolio";
+import Home from "./pages/home/home.jsx";
+import Solutions from "./pages/solution/solutions.jsx";
 
 function App() {
-  return <Home />;
-  return <Portfolio />;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/solutions" element={<Solutions />} />
+    </Routes>
+  );
 }
 
 export default App;
-  
-
-
-
-
