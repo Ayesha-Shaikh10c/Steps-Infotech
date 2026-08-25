@@ -1,9 +1,10 @@
-import AboutHero from "../../components/about/AboutHero";
-import WhoWeAre from "../../components/about/WhoWeAre";
-import Stats from "../../components/about/Stats";
-import MissionVision from "../../components/about/MissionVision";
-import Values from "../../components/about/Values";
-import WhyChooseUs from "../../components/about/WhyChooseUs";
+import AboutHero from "./components/about/AboutHero";
+import WhoWeAre from "./components/about/WhoWeAre";
+import Stats from "./components/about/Stats";
+import MissionVision from "./components/about/MissionVision";
+import Values from "./components/about/Values";
+import WhyChooseUs from "./components/about/WhyChooseUs";
+import Footer from "./components/about/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <MissionVision />
       <Values />
       <WhyChooseUs />
+      <Footer />
     </>
   );
 }

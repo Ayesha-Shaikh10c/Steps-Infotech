@@ -1,4 +1,4 @@
-const Values = () => {
+function Values() {
 
   const values = [
     "Integrity and Transparency",
@@ -16,7 +16,7 @@ const Values = () => {
       </p>
 
       <h2 className="text-3xl md:text-5xl font-bold mt-4">
-        What We Believe In
+        Our Values
       </h2>
 
       <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
@@ -36,6 +36,6 @@ const Values = () => {
 
     </section>
   );
-};
+}
 
 export default Values;

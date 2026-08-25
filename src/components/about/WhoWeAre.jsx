@@ -1,4 +1,4 @@
-const WhoWeAre = () => {
+function WhoWeAre() {
   return (
     <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
@@ -31,6 +31,6 @@ const WhoWeAre = () => {
       </div>
     </section>
   );
-};
+}
 
 export default WhoWeAre;

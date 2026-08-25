@@ -1,4 +1,4 @@
-const WhyChooseUs = () => {
+function WhyChooseUs() {
 
   const reasons = [
     {
@@ -33,6 +33,7 @@ const WhyChooseUs = () => {
             key={reason.title}
             className="border border-gray-200 rounded-2xl p-8 text-left hover:shadow-xl transition"
           >
+
             <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold">
               ✓
             </div>
@@ -44,6 +45,7 @@ const WhyChooseUs = () => {
             <p className="mt-4 text-gray-600 leading-7">
               {reason.text}
             </p>
+
           </div>
         ))}
 
@@ -51,6 +53,6 @@ const WhyChooseUs = () => {
 
     </section>
   );
-};
+}
 
 export default WhyChooseUs;

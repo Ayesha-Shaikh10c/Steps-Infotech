@@ -1,4 +1,4 @@
-const MissionVision = () => {
+function MissionVision() {
   return (
     <section className="py-20 px-6">
 
@@ -6,6 +6,7 @@ const MissionVision = () => {
 
         {/* Mission */}
         <div className="border border-gray-200 rounded-2xl p-10 hover:shadow-lg transition">
+
           <p className="text-blue-600 font-semibold">
             OUR MISSION
           </p>
@@ -19,10 +20,12 @@ const MissionVision = () => {
             growth, enhance efficiency and create lasting value
             for our clients.
           </p>
+
         </div>
 
         {/* Vision */}
         <div className="border border-gray-200 rounded-2xl p-10 hover:shadow-lg transition">
+
           <p className="text-blue-600 font-semibold">
             OUR VISION
           </p>
@@ -36,12 +39,13 @@ const MissionVision = () => {
             for innovation, integrity and excellence in everything
             we do.
           </p>
+
         </div>
 
       </div>
 
     </section>
   );
-};
+}
 
 export default MissionVision;

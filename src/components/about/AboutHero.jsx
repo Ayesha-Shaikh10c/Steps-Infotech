@@ -1,9 +1,6 @@
-const AboutHero = () => {
+function AboutHero() {
   return (
-    <section
-      id="about"
-      className="bg-gray-50 py-24 px-6 text-center"
-    >
+    <section className="bg-gray-50 py-24 px-6 text-center">
       <p className="text-sm font-semibold tracking-[4px] text-blue-600">
         ABOUT
       </p>
@@ -23,6 +20,6 @@ const AboutHero = () => {
       </button>
     </section>
   );
-};
+}
 
 export default AboutHero;

@@ -1,4 +1,4 @@
-const Stats = () => {
+function Stats() {
 
   const stats = [
     {
@@ -47,6 +47,6 @@ const Stats = () => {
 
     </section>
   );
-};
+}
 
 export default Stats;

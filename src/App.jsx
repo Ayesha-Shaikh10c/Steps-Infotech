@@ -32,6 +32,8 @@ import About from "./pages/about/about";
 // If you put a second <BrowserRouter> here too, you get:
 // "You cannot render a <Router> inside another <Router>"
 export default function App() {
+   
+
   return (
     <Routes>
       <Route element={<Layout />}>
