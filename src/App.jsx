@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/home.jsx";
 
 import Portfolio from "./pages/portfolio/portfolio";
@@ -47,7 +48,7 @@ export default function App() {
           this whole block. Uncomment one <Route> line at a time
           as each page gets built, matching the import above.
         */}
-          <Route path="/about" element={<About />} /> 
+        <Route path="/about" element={<About />} /> 
         {/* <Route path="/services" element={<Services />} /> */}
         {/* <Route path="/technologies" element={<Technologies />} /> */}
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
@@ -59,8 +60,6 @@ export default function App() {
     </Routes>
   );
 }
-
-export default App;
   
 
 
