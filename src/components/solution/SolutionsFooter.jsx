@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   FaLocationDot,
   FaPhone,
@@ -13,14 +12,7 @@ import {
 } from "react-icons/fa6";
 import logoWhite from "../../assets/logo-footer.png";
 
-// Single source of truth for footer links, same idea as Navbar.
-const QUICK_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "About us", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Solution", to: "/solutions" },
-  { label: "Technologies", to: "/technologies" },
-];
+const QUICK_LINKS = ["Home", "About us", "Services", "Solution", "Technologies"];
 const SERVICES = [
   "Web Development",
   "Mobile App Development",
@@ -28,7 +20,7 @@ const SERVICES = [
   "Digital Marketing",
 ];
 
-export default function Footer() {
+export default function SolutionsFooter() {
   return (
     <footer className="bg-brand-navy text-white font-body relative">
       {/* Main footer grid */}
@@ -59,10 +51,13 @@ export default function Footer() {
           <h4 className="font-heading text-base mb-4">Quick Links</h4>
           <ul className="space-y-2 text-sm text-white/60">
             {QUICK_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link to={link.to} className="hover:text-brand-teal transition-colors">
-                  {link.label}
-                </Link>
+              <li key={link}>
+                <a
+                  href={link === "Home" ? "/" : "#"}
+                  className="hover:text-brand-teal transition-colors"
+                >
+                  {link}
+                </a>
               </li>
             ))}
           </ul>
@@ -102,8 +97,7 @@ export default function Footer() {
         © 2026 Steps Infotech. All Rights Reserved.
       </div>
 
-      {/* Bottom CTA strip — id="contact" is what "Get In Touch" / "Contact us"
-          buttons across the whole site scroll to */}
+      {/* Bottom CTA strip */}
       <div id="contact" className="bg-brand-teal scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">

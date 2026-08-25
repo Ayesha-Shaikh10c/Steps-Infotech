@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
 import {
   FaPhone,
   FaEnvelope,
@@ -13,30 +12,20 @@ import {
 } from "react-icons/fa6";
 import logo from "../../assets/logo.png";
 
-// Single source of truth for nav links — add/remove a page here and
-// it updates the navbar everywhere, on every page, automatically.
 const NAV_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Solutions", to: "/solutions" },
-  { label: "Technologies", to: "/technologies" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Testimonials", to: "/testimonials" },
-  { label: "Careers", to: "/careers" },
-  { label: "Blog", to: "/blog" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Technologies", href: "/technologies" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Careers", href: "/careers" },
+  { label: "Blog", href: "/blog" },
 ];
 
-export default function Navbar() {
+export default function SolutionsNavbar() {
   const [open, setOpen] = useState(false);
-
-  // Shared class logic for active vs inactive link state.
-  // NavLink automatically knows which page is current — no manual
-  // string-checking against a page name needed anywhere.
-  const linkClass = ({ isActive }) =>
-    `transition-colors hover:text-brand-teal ${
-      isActive ? "text-brand-teal font-semibold" : ""
-    }`;
 
   return (
     <header className="w-full font-body">
@@ -71,17 +60,22 @@ export default function Navbar() {
 
       {/* Main nav */}
       <nav className="flex items-center justify-between px-6 md:px-10 py-3 bg-white shadow-sm">
-        <Link to="/" className="flex items-center shrink-0">
+        <a href="/" className="flex items-center shrink-0">
           <img src={logo} alt="Steps Infotech" className="h-8 w-auto" />
-        </Link>
+        </a>
 
         {/* Desktop links */}
         <ul className="hidden lg:flex items-center gap-5 text-[13px] font-medium text-brand-navy uppercase tracking-wide">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <NavLink to={link.to} end={link.to === "/"} className={linkClass}>
+              <a
+                href={link.href}
+                className={`transition-colors hover:text-brand-teal ${
+                  link.label === "Solutions" ? "text-brand-teal font-semibold" : ""
+                }`}
+              >
                 {link.label}
-              </NavLink>
+              </a>
             </li>
           ))}
         </ul>
@@ -108,25 +102,20 @@ export default function Navbar() {
         <ul className="lg:hidden flex flex-col gap-1 bg-white border-t border-gray-100 px-6 py-4 text-brand-navy font-medium">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <NavLink
-                to={link.to}
-                end={link.to === "/"}
-                className={({ isActive }) =>
-                  `block py-2 hover:text-brand-teal transition-colors ${
-                    isActive ? "text-brand-teal font-semibold" : ""
-                  }`
-                }
-                onClick={() => setOpen(false)}
+              <a
+                href={link.href}
+                className={`block py-2 hover:text-brand-teal transition-colors ${
+                  link.label === "Solutions" ? "text-brand-teal font-semibold" : ""
+                }`}
               >
                 {link.label}
-              </NavLink>
+              </a>
             </li>
           ))}
           <li>
             <a
               href="#contact"
               className="mt-2 inline-block bg-brand-teal text-white text-sm font-semibold px-5 py-2.5 rounded-md"
-              onClick={() => setOpen(false)}
             >
               Get In Touch
             </a>

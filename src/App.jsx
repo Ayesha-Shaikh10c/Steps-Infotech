@@ -1,122 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Home from "./pages/home/home";
+import Solutions from "./pages/solution/solutions";
 
+// Uncomment each import below as that team member finishes their page.
+// import About from "./pages/about/about";
+// import Services from "./pages/services/services";
+// import Technologies from "./pages/technologies/technologies";
+// import Portfolio from "./pages/portfolio/portfolio";
+// import PartnersClient from "./pages/PartnersClient/partners&client";
+import Testimonials from "./pages/testimonials/testimonials";
+// import Careers from "./pages/careers/careers";
+// import Blog from "./pages/blog/blog";
+
+// NOTE: every route below is nested INSIDE the Layout route.
+// That's what makes Navbar + Footer "universal" — React Router
+// renders Layout once, and swaps only the <Outlet /> content
+// (the actual page) as the URL changes. Navbar/Footer never
+// re-mount between page navigations.
+//
+// IMPORTANT: <BrowserRouter> is NOT here. There must be exactly
+// ONE <BrowserRouter> in the whole app, and it belongs in
+// main.jsx wrapping <App />, like this:
+//
+//   import { BrowserRouter } from "react-router-dom";
+//   ReactDOM.createRoot(document.getElementById("root")).render(
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   );
+//
+// If you put a second <BrowserRouter> here too, you get:
+// "You cannot render a <Router> inside another <Router>"
+export default function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/solutions" element={<Solutions />} />
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/*
+          JSX doesn't support // comments inside markup — the "<"
+          always starts a new tag no matter what's before it.
+          You MUST wrap commented-out JSX in { / * ... * / } like
+          this whole block. Uncomment one <Route> line at a time
+          as each page gets built, matching the import above.
+        */}
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/services" element={<Services />} /> */}
+        {/* <Route path="/technologies" element={<Technologies />} /> */}
+        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+        {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
+        <Route path="/testimonials" element={<Testimonials />} /> 
+        {/* <Route path="/careers" element={<Careers />} /> */}
+        {/* <Route path="/blog" element={<Blog />} /> */}
+      </Route>
+    </Routes>
+  );
 }
-
-export default App

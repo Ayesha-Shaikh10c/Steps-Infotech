@@ -1,0 +1,411 @@
+.internship-section {
+  width: 100%;
+  min-height: 900px;
+  background: #004b55;
+  padding: 55px 5.5%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.internship-top {
+  width: 100%;
+  max-width: 1320px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.internship-left {
+  width: 62%;
+}
+
+.learning-badge {
+  width: fit-content;
+
+  background: #087b82;
+
+  padding: 12px 22px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  margin-bottom: 28px;
+}
+
+.internship-left h1 {
+  margin: 0;
+
+  font-size: 64px;
+  line-height: 1.08;
+
+  font-weight: 700;
+}
+
+.internship-left h1 span {
+  color: #12dddd;
+}
+
+.intro-text {
+  margin-top: 25px;
+
+  color: #d5eeee;
+
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.features {
+  margin-top: 48px;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.feature {
+  flex: 1;
+
+  text-align: center;
+}
+
+.feature-icon {
+  color: #12dddd;
+
+  font-size: 32px;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature h3 {
+  margin: 12px 0 10px;
+
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.feature p {
+  margin: 0;
+
+  color: #c5dddd;
+
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.feature-divider {
+  width: 1px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  margin: 0 18px;
+}
+
+.program-card {
+  width: 38%;
+
+  background: #075e66;
+
+  border-radius: 22px;
+
+  padding: 30px 34px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.program-card h2 {
+  margin: 0 0 18px;
+
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.program-card h2 span {
+  color: #12dddd;
+}
+
+.program-item {
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.program-icon {
+  min-width: 35px;
+
+  color: #12dddd;
+
+  font-size: 26px;
+
+  text-align: center;
+}
+
+.program-item h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.program-item p {
+  margin: 4px 0 0;
+
+  color: #c5dddd;
+
+  font-size: 13px;
+}
+
+.apply-btn {
+  width: 75%;
+
+  display: block;
+
+  margin: 20px auto 0;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #13d2d2;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.stats-bar {
+  width: 100%;
+  max-width: 1320px;
+
+  margin: 25px auto 0;
+
+  padding: 17px 20px;
+
+  box-sizing: border-box;
+
+  background: #087d83;
+
+  border-radius: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.stat-icon {
+  color: #12dddd;
+  font-size: 25px;
+}
+
+.stat-number {
+  color: white;
+
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.stat-item p {
+  margin: 2px 0 0;
+
+  color: #e0eeee;
+
+  font-size: 15px;
+
+  line-height: 1.25;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 80px;
+
+  background: rgba(0, 45, 52, 0.7);
+}
+
+@media (max-width: 1100px) {
+  .internship-section {
+    padding: 45px 4%;
+  }
+
+  .internship-top {
+    gap: 30px;
+  }
+
+  .internship-left h1 {
+    font-size: 50px;
+  }
+
+  .feature-divider {
+    margin: 0 8px;
+  }
+
+  .feature h3 {
+    font-size: 18px;
+  }
+
+  .program-card {
+    padding: 25px;
+  }
+
+  .program-card h2 {
+    font-size: 27px;
+  }
+
+  .stat-number {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 800px) {
+  .internship-section {
+    min-height: auto;
+  }
+
+  .internship-top {
+    flex-direction: column;
+  }
+
+  .internship-left,
+  .program-card {
+    width: 100%;
+  }
+
+  .internship-left h1 {
+    font-size: 45px;
+  }
+
+  .features {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .feature {
+    min-width: 40%;
+  }
+
+  .feature-divider {
+    display: none;
+  }
+
+  .stats-bar {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .stat-item {
+    min-width: 28%;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .internship-section {
+    padding: 35px 5%;
+  }
+
+  .learning-badge {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .internship-left h1 {
+    font-size: 36px;
+  }
+
+  .intro-text {
+    font-size: 15px;
+  }
+
+  .intro-text br {
+    display: none;
+  }
+
+  .features {
+    gap: 30px 10px;
+  }
+
+  .feature {
+    min-width: 45%;
+  }
+
+  .feature h3 {
+    font-size: 16px;
+  }
+
+  .feature p {
+    font-size: 12px;
+  }
+
+  .program-card {
+    padding: 22px 18px;
+  }
+
+  .program-card h2 {
+    font-size: 24px;
+  }
+
+  .program-item h3 {
+    font-size: 15px;
+  }
+
+  .program-item p {
+    font-size: 11px;
+  }
+
+  .apply-btn {
+    width: 100%;
+  }
+
+  .stats-bar {
+    padding: 15px 10px;
+  }
+
+  .stat-item {
+    min-width: 45%;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .stat-item p {
+    font-size: 12px;
+  }
+}
