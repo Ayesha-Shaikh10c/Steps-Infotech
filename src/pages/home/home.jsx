@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-function App() {
-  return (
-    <div>
-      <h1>Hello, World!</h1>
-      <p>Welcome to React JSX.</p>
-    </div>
-  );
-}
-
-export default App;
-=======
 import Header from "../../Components/home/Header";
 import Hero from "../../Components/home/Hero";
 import Stories from "../../Components/home/Stories";
@@ -36,4 +24,3 @@ function Home() {
 
 export default Home;
 
->>>>>>> main
