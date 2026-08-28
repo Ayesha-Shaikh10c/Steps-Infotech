@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+/*@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');*/
+
+@theme {
+  /* Brand colors */
+  --color-brand-navy: #061D24;   /* header / footer bg */
+  --color-brand-info: #E3FAFB;   /* light info bg */
+  --color-brand-teal: #0F7C7A;   /* buttons / accents */
+  --color-brand-desc: #155361;   /* description bg */
+
+  /* Fonts */
+  --font-heading: "Boldonse", sans-serif;
+  --font-body: "Poppins", sans-serif;
+}
+@theme {
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -17,7 +41,11 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  /* FIX: force light only — this site has a fixed brand identity,
+     it should never flip to a dark palette based on OS/browser
+     preference. This single change is what was making your
+     backgrounds turn black. */
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -30,36 +58,26 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+html {
+  scroll-behavior: smooth;
 }
+
+/* REMOVED: the @media (prefers-color-scheme: dark) block that
+   redefined --bg to #16171d and --text-h to #f3f4f6. That block
+   was the actual root cause of the black backgrounds and
+   invisible navy text — deleting it stops the flip entirely. */
 
 body {
   margin: 0;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  /* FIX: was `width: 1126px; max-width: 100%; text-align: center;`
+     which caged the whole app (including your Solutions page) into
+     a fixed centered 1126px column with centered text. Your
+     Tailwind sections already handle their own max-width via
+     `max-w-6xl mx-auto`, so #root just needs to be full width. */
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
