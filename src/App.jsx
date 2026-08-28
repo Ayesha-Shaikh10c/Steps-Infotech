@@ -12,7 +12,8 @@ import Solutions from "./pages/solution/solutions";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 // import Testimonials from "./pages/testimonials/testimonials";
 // import Careers from "./pages/careers/careers";
-// import Blog from "./pages/blog/blog";
+import Blog from "./pages/blog/Blog";
+import ArticleDetails from "./components/blog/ArticleDetails";
 
 // NOTE: every route below is nested INSIDE the Layout route.
 // That's what makes Navbar + Footer "universal" — React Router
@@ -54,7 +55,8 @@ export default function App() {
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
         {/* <Route path="/testimonials" element={<Testimonials />} /> */}
         {/* <Route path="/careers" element={<Careers />} /> */}
-        {/* <Route path="/blog" element={<Blog />} /> */}
+        { <Route path="/blog" element={<Blog />} /> }
+        { <Route path="/article/:id" element={<ArticleDetails />}/>}
       </Route>
     </Routes>
   );
