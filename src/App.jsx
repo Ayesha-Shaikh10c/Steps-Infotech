@@ -3,11 +3,11 @@ import Layout from "./components/layout/Layout";
 
 import Home from "./pages/home/home";
 import Solutions from "./pages/solution/solutions";
-
+ import Technologies from "./pages/technologies/technologies";
 // Uncomment each import below as that team member finishes their page.
 // import About from "./pages/about/about";
 // import Services from "./pages/services/services";
-// import Technologies from "./pages/technologies/technologies";
+
 // import Portfolio from "./pages/portfolio/portfolio";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 // import Testimonials from "./pages/testimonials/testimonials";
@@ -39,7 +39,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
-
+        {<Route path="/technologies" element={<Technologies />} />}
         {/*
           JSX doesn't support // comments inside markup — the "<"
           always starts a new tag no matter what's before it.
@@ -49,7 +49,7 @@ export default function App() {
         */}
         {/* <Route path="/about" element={<About />} /> */}
         {/* <Route path="/services" element={<Services />} /> */}
-        {/* <Route path="/technologies" element={<Technologies />} /> */}
+       
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
         {/* <Route path="/testimonials" element={<Testimonials />} /> */}

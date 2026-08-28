@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+/*@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');*/
 
 @theme {
   /* Brand colors */
@@ -12,7 +13,15 @@
   --font-heading: "Boldonse", sans-serif;
   --font-body: "Poppins", sans-serif;
 }
+@theme {
+  --animate-marquee: marquee 25s linear infinite;
 
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
 :root {
   --text: #6b6375;
   --text-h: #08060d;
