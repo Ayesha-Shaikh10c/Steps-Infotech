@@ -3,7 +3,8 @@ import Layout from "./components/layout/Layout";
 
 import Home from "./pages/home/home";
 import Solutions from "./pages/solution/solutions";
- import Technologies from "./pages/technologies/technologies";
+import SolutionDetail from "./pages/solution/SolutionDetail";
+import Technologies from "./pages/technologies/technologies";
 // Uncomment each import below as that team member finishes their page.
 // import About from "./pages/about/about";
 // import Services from "./pages/services/services";
@@ -40,6 +41,7 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/solutions/:slug" element={<SolutionDetail />} />
         {<Route path="/technologies" element={<Technologies />} />}
         {/*
           JSX doesn't support // comments inside markup — the "<"
