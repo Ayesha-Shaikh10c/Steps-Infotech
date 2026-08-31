@@ -6,7 +6,7 @@ import Solutions from "./pages/solution/solutions";
 
 // Uncomment each import below as that team member finishes their page.
 // import About from "./pages/about/about";
-// import Services from "./pages/services/services";
+import Services from "./pages/services/services";
 // import Technologies from "./pages/technologies/technologies";
 // import Portfolio from "./pages/portfolio/portfolio";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
@@ -48,7 +48,7 @@ export default function App() {
           as each page gets built, matching the import above.
         */}
         {/* <Route path="/about" element={<About />} /> */}
-        {/* <Route path="/services" element={<Services />} /> */}
+        <Route path="/services" element={<Services />} /> 
         {/* <Route path="/technologies" element={<Technologies />} /> */}
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
