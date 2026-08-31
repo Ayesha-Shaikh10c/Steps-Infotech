@@ -1,17 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/home/home.jsx";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/layout/Layout";
 
-import Portfolio from "./pages/portfolio/portfolio";
-
+import Home from "./pages/home/home";
+import Solutions from "./pages/solution/solutions";
+import SolutionDetail from "./pages/solution/SolutionDetail";
+import Technologies from "./pages/technologies/technologies";
 // Uncomment each import below as that team member finishes their page.
-import About from "./pages/about/about";
-// import Services from "./pages/services/services";
+// import About from "./pages/about/about";
+import Services from "./pages/services/services";
 // import Technologies from "./pages/technologies/technologies";
 // import Portfolio from "./pages/portfolio/portfolio";
+// import Services from "./pages/services/services";
+
+import Portfolio from "./pages/portfolio/portfolio";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
-// import Testimonials from "./pages/testimonials/testimonials";
+import Testimonials from "./pages/testimonials/testimonials";
 // import Careers from "./pages/careers/careers";
-// import Blog from "./pages/blog/blog";
+import Blog from "./pages/blog/Blog";
+import ArticleDetails from "./components/blog/ArticleDetails";
 
 // NOTE: every route below is nested INSIDE the Layout route.
 // That's what makes Navbar + Footer "universal" — React Router
@@ -33,14 +39,13 @@ import About from "./pages/about/about";
 // If you put a second <BrowserRouter> here too, you get:
 // "You cannot render a <Router> inside another <Router>"
 export default function App() {
-   
-
   return (
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/solutions" element={<Solutions />} />
-
+        <Route path="/solutions/:slug" element={<SolutionDetail />} />
+        {<Route path="/technologies" element={<Technologies />} />}
         {/*
           JSX doesn't support // comments inside markup — the "<"
           always starts a new tag no matter what's before it.
@@ -48,20 +53,19 @@ export default function App() {
           this whole block. Uncomment one <Route> line at a time
           as each page gets built, matching the import above.
         */}
-        <Route path="/about" element={<About />} /> 
-        {/* <Route path="/services" element={<Services />} /> */}
+        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/services" element={<Services />} /> 
         {/* <Route path="/technologies" element={<Technologies />} /> */}
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+        {/* <Route path="/services" element={<Services />} /> */}
+       
+        <Route path="/portfolio" element={<Portfolio />} /> 
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
-        {/* <Route path="/testimonials" element={<Testimonials />} /> */}
+        <Route path="/testimonials" element={<Testimonials />} /> 
         {/* <Route path="/careers" element={<Careers />} /> */}
-        {/* <Route path="/blog" element={<Blog />} /> */}
+        { <Route path="/blog" element={<Blog />} /> }
+        { <Route path="/article/:id" element={<ArticleDetails />}/>}
       </Route>
     </Routes>
   );
 }
-  
-
-
-
-
