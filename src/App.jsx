@@ -6,7 +6,7 @@ import Solutions from "./pages/solution/solutions";
 import SolutionDetail from "./pages/solution/SolutionDetail";
 import Technologies from "./pages/technologies/technologies";
 // Uncomment each import below as that team member finishes their page.
-// import About from "./pages/about/about";
+import About from "./pages/about/about";
 import Services from "./pages/services/services";
 // import Technologies from "./pages/technologies/technologies";
 // import Portfolio from "./pages/portfolio/portfolio";
@@ -53,7 +53,7 @@ export default function App() {
           this whole block. Uncomment one <Route> line at a time
           as each page gets built, matching the import above.
         */}
-        {/* <Route path="/about" element={<About />} /> */}
+        <Route path="/about" element={<About />} /> 
         <Route path="/services" element={<Services />} /> 
         {/* <Route path="/technologies" element={<Technologies />} /> */}
         {/* <Route path="/portfolio" element={<Portfolio />} /> */}
