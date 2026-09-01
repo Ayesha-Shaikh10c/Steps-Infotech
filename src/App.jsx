@@ -12,7 +12,7 @@ import Solutions from "./pages/solution/solutions";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 // import Testimonials from "./pages/testimonials/testimonials";
 // import Careers from "./pages/careers/careers";
-import Blog from "./pages/blog/Blog";
+import Blog from "./pages/blog/blog";
 import ArticleDetails from "./components/blog/ArticleDetails";
 
 // NOTE: every route below is nested INSIDE the Layout route.
