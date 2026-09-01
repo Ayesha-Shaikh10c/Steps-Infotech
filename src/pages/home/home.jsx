@@ -1,23 +1,18 @@
-import Header from "../../Components/home/Header";
-import Hero from "../../Components/home/Hero";
-import Stories from "../../Components/home/Stories";
-import CTA from "../../Components/home/CTA";
-import Highlight from "../../Components/home/Highlight";
-import Topics from "../../Components/home/Topics";
-import Career from "../../Components/home/Career";
-import Footer from "../../Components/home/Footer";
+
+import InternshipHighlights from "../../components/home/InternshipHighlights";
+import InternshipSection from "../../components/home/InternshipSection";
+import RoadmapGenerator from "../../components/home/RoadmapGenerator";
+import ServicesSection from "../../components/home/ServicesSection";
+import SuccessStories from "../../components/home/SuccessStories";
 
 function Home() {
   return (
     <>
-      <Header />
-      <Hero />
-      <Stories />
-      <CTA />
-      <Highlight />
-      <Topics />
-      <Career />
-      <Footer />
+    <InternshipSection/>
+     <SuccessStories/> 
+     < ServicesSection/>
+     < InternshipHighlights/>
+     < RoadmapGenerator/>
     </>
   );
 }
