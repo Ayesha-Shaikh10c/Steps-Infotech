@@ -1,138 +1,234 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+
 import {
-  FaPhone,
+  FaPhoneAlt,
   FaEnvelope,
-  FaLocationDot,
+  FaMapMarkerAlt,
+  FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
-  FaXTwitter,
-  FaInstagram,
   FaBars,
-  FaXmark,
-} from "react-icons/fa6";
-import logo from "../../assets/logo.png";
+  FaTimes,
+} from "react-icons/fa";
 
-// Single source of truth for nav links — add/remove a page here and
-// it updates the navbar everywhere, on every page, automatically.
-const NAV_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Solutions", to: "/solutions" },
-  { label: "Technologies", to: "/technologies" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Testimonials", to: "/testimonials" },
-  { label: "Careers", to: "/careers" },
-  { label: "Blog", to: "/blog" },
-];
+function navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
-  // Shared class logic for active vs inactive link state.
-  // NavLink automatically knows which page is current — no manual
-  // string-checking against a page name needed anywhere.
-  const linkClass = ({ isActive }) =>
-    `transition-colors hover:text-brand-teal ${
-      isActive ? "text-brand-teal font-semibold" : ""
-    }`;
+  const navItems = [
+    { name: "Home", path: "/home" },
+    { name: "About", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Solutions", path: "/solutions" },
+    { name: "Technologies", path: "/technologies" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "Careers", path: "/careers" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
-    <header className="w-full font-body">
-      {/* Top utility bar */}
-      <div className="hidden md:flex items-center justify-between bg-brand-navy text-white text-xs px-8 py-2">
-        <div className="flex items-center gap-6">
-          <span className="flex items-center gap-2">
-            <FaPhone className="text-brand-teal" /> +91 7487447474
-          </span>
-          <span className="flex items-center gap-2">
-            <FaEnvelope className="text-brand-teal" /> stepsinfotech@org.com
-          </span>
-          <span className="flex items-center gap-2">
-            <FaLocationDot className="text-brand-teal" /> Pune, Maharashtra, India
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <a href="#" aria-label="Facebook" className="hover:text-brand-teal transition-colors">
-            <FaFacebookF />
-          </a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-brand-teal transition-colors">
-            <FaLinkedinIn />
-          </a>
-          <a href="#" aria-label="X" className="hover:text-brand-teal transition-colors">
-            <FaXTwitter />
-          </a>
-          <a href="#" aria-label="Instagram" className="hover:text-brand-teal transition-colors">
-            <FaInstagram />
-          </a>
+    <header className="sticky top-0 z-[9999] w-full bg-white">
+      {/* =====================================================
+          TOP BAR
+      ====================================================== */}
+
+      <div className="w-full bg-[#111c2b] text-white">
+        <div className="mx-auto flex h-[34px] w-[92%] max-w-[1320px] items-center justify-between">
+          {/* LEFT CONTACT */}
+          <div className="flex items-center gap-5 md:gap-8">
+            {/* PHONE */}
+            <div className="flex items-center gap-2 whitespace-nowrap text-[10px] font-medium sm:text-[11px]">
+              <FaPhoneAlt className="text-[12px] text-[#079c9c]" />
+              <span>+91 9876543210</span>
+            </div>
+
+            {/* EMAIL */}
+            <div className="hidden items-center gap-2 whitespace-nowrap text-[10px] font-medium sm:flex sm:text-[11px]">
+              <FaEnvelope className="text-[13px] text-[#079c9c]" />
+              <span>stepsinfotech@org.com</span>
+            </div>
+
+            {/* LOCATION */}
+            <div className="hidden items-center gap-2 whitespace-nowrap text-[10px] font-medium md:flex md:text-[11px]">
+              <FaMapMarkerAlt className="text-[13px] text-[#079c9c]" />
+              <span>Pune Maharashtra</span>
+            </div>
+          </div>
+
+          {/* SOCIAL LINKS */}
+          <div className="hidden items-center gap-3 sm:flex">
+            <a
+              href="#"
+              aria-label="X"
+              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
+            >
+              𝕏
+            </a>
+
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
+            >
+              <FaInstagram />
+            </a>
+
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Main nav */}
-      <nav className="flex items-center justify-between px-6 md:px-10 py-3 bg-white shadow-sm">
-        <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="Steps Infotech" className="h-8 w-auto" />
-        </Link>
+      {/* =====================================================
+          MAIN NAVBAR
+      ====================================================== */}
 
-        {/* Desktop links */}
-        <ul className="hidden lg:flex items-center gap-5 text-[13px] font-medium text-brand-navy uppercase tracking-wide">
-          {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <NavLink to={link.to} end={link.to === "/"} className={linkClass}>
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+      <nav className="w-full border-b border-gray-200 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+        <div className="mx-auto flex h-[58px] w-[92%] max-w-[1320px] items-center justify-between">
+          {/* =================================================
+              LOGO
+          ================================================== */}
 
-        <a
-          href="#contact"
-          className="hidden lg:inline-block bg-brand-teal text-white text-xs font-semibold uppercase tracking-wide px-4 py-2 rounded-md hover:bg-brand-desc transition-colors shrink-0"
-        >
-          Get In Touch
-        </a>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className="flex shrink-0 items-center"
+          >
+            {/* S SYMBOL */}
+            <div className="mr-2 flex h-[42px] w-[35px] items-center justify-center">
+              <span className="font-[Arial,sans-serif] text-[32px] font-black italic leading-none text-[#078f92]">
+                S
+              </span>
+            </div>
 
-        {/* Mobile toggle */}
-        <button
-          className="lg:hidden text-brand-navy text-2xl"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {open ? <FaXmark /> : <FaBars />}
-        </button>
-      </nav>
+            {/* LOGO TEXT */}
+            <div className="flex flex-col leading-none">
+              <span className="text-[23px] font-extrabold tracking-[-0.5px] text-[#193b48]">
+                STEPS
+              </span>
 
-      {/* Mobile menu */}
-      {open && (
-        <ul className="lg:hidden flex flex-col gap-1 bg-white border-t border-gray-100 px-6 py-4 text-brand-navy font-medium">
-          {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <NavLink
-                to={link.to}
-                end={link.to === "/"}
-                className={({ isActive }) =>
-                  `block py-2 hover:text-brand-teal transition-colors ${
-                    isActive ? "text-brand-teal font-semibold" : ""
-                  }`
-                }
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </NavLink>
-            </li>
-          ))}
-          <li>
-            <a
-              href="#contact"
-              className="mt-2 inline-block bg-brand-teal text-white text-sm font-semibold px-5 py-2.5 rounded-md"
-              onClick={() => setOpen(false)}
+              <span className="mt-[3px] text-[9px] font-semibold tracking-[2px] text-[#078f92]">
+                INFOTECH
+              </span>
+            </div>
+          </Link>
+
+          {/* =================================================
+              DESKTOP MENU
+          ================================================== */}
+
+          <div className="hidden h-full items-center lg:flex">
+            <ul className="flex h-full items-center gap-[25px]">
+              {navItems.map((item) => (
+                <li key={item.name} className="h-full">
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `relative flex h-full items-center whitespace-nowrap text-[13px] font-semibold transition ${
+                        isActive
+                          ? "text-[#079c9c]"
+                          : "text-[#172033] hover:text-[#079c9c]"
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        {item.name}
+
+                        {isActive && (
+                          <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#079c9c]" />
+                        )}
+                      </>
+                    )}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+
+            {/* GET IN TOUCH */}
+            <Link
+              to="/contact"
+              className="ml-6 flex h-[36px] shrink-0 items-center justify-center rounded-[5px] bg-[#079c9c] px-[15px] text-[12px] font-semibold whitespace-nowrap text-white transition hover:-translate-y-[1px] hover:bg-[#067c7e]"
             >
               Get In Touch
-            </a>
-          </li>
-        </ul>
-      )}
+            </Link>
+          </div>
+
+          {/* =================================================
+              MOBILE MENU BUTTON
+          ================================================== */}
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            className="flex items-center justify-center border-0 bg-transparent text-[23px] text-[#172033] lg:hidden"
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
+        {/* =================================================
+            MOBILE MENU
+        ================================================== */}
+
+        <div
+          className={`overflow-hidden border-t border-gray-200 bg-white shadow-[0_10px_20px_rgba(0,0,0,0.08)] transition-all duration-300 lg:hidden ${
+            menuOpen
+              ? "max-h-[600px] opacity-100"
+              : "pointer-events-none max-h-0 opacity-0"
+          }`}
+        >
+          <div className="mx-auto flex w-[90%] flex-col py-2">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `border-b border-gray-100 px-1 py-3 text-[14px] font-semibold transition ${
+                    isActive
+                      ? "text-[#079c9c]"
+                      : "text-[#172033] hover:text-[#079c9c]"
+                  }`
+                }
+              >
+                {item.name}
+              </NavLink>
+            ))}
+
+            {/* MOBILE GET IN TOUCH */}
+            <Link
+              to="/"
+              onClick={closeMenu}
+              className="mt-3 mb-2 flex h-[42px] items-center justify-center rounded-[5px] bg-[#079c9c] text-[14px] font-semibold text-white transition hover:bg-[#067c7e]"
+            >
+              Get In Touch
+            </Link>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }
+
+export default navbar;

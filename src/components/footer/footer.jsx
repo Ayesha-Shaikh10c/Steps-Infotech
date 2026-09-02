@@ -1,140 +1,264 @@
-import { Link } from "react-router-dom";
 import {
-  FaLocationDot,
-  FaPhone,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
   FaEnvelope,
+  FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
-  FaXTwitter,
-  FaInstagram,
-  FaArrowRight,
-  FaRobot,
-  FaComments,
-} from "react-icons/fa6";
-import logoWhite from "../../assets/logo-footer.png";
+} from "react-icons/fa";
 
-// Single source of truth for footer links, same idea as Navbar.
-const QUICK_LINKS = [
-  { label: "Home", to: "/" },
-  { label: "About us", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Solution", to: "/solutions" },
-  { label: "Technologies", to: "/technologies" },
-];
-const SERVICES = [
-  "Web Development",
-  "Mobile App Development",
-  "Cloud Solutions",
-  "Digital Marketing",
-];
+import { Link } from "react-router-dom";
 
-export default function Footer() {
+function footer() {
+  const quickLinks = [
+    { name: "Home", path: "/home" },
+    { name: "About Us", path: "/about" },
+    { name: "Services", path: "/services" },
+    { name: "Solutions", path: "/solutions" },
+    { name: "Technologies", path: "/technologies" },
+    { name: "Careers", path: "/careers" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact Us", path: "/contact" },
+  ];
+
+  const services = [
+    "Web Development",
+    "Mobile App Development",
+    "Cloud Solutions",
+    "Cyber Security",
+    "Digital Marketing",
+    "UI/UX Design",
+    "IT Support",
+  ];
+
   return (
-    <footer className="bg-brand-navy text-white font-body relative">
-      {/* Main footer grid */}
-      <div className="max-w-6xl mx-auto px-6 md:px-8 pt-16 pb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div>
-          <img src={logoWhite} alt="Steps Infotech" className="h-9 w-auto mb-4" />
-          <p className="text-white/60 text-sm">
-            Building secure, scalable and innovative software solutions using
-            modern technologies.
+    <footer className="w-full bg-[#0b3d3d] text-white">
+      {/* =====================================================
+          MAIN FOOTER
+      ====================================================== */}
+
+      <div className="mx-auto grid w-[90%] max-w-[1180px] grid-cols-1 gap-[35px] py-[45px] md:grid-cols-2 md:gap-[45px] lg:grid-cols-[1.25fr_0.8fr_1.15fr_1.15fr] lg:gap-[70px] lg:py-[25px]">
+        {/* =================================================
+            LOGO + ABOUT
+        ================================================== */}
+
+        <div className="min-w-0">
+          {/* LOGO */}
+
+          <Link
+            to="/"
+            className="mb-[20px] flex items-center gap-[10px]"
+          >
+            {/* S SYMBOL */}
+
+            <div className="flex h-[43px] w-[43px] skew-[-8deg] items-center justify-center rounded-[8px] border-[6px] border-[#38bdf8] border-t-transparent border-b-[#14b8a6] font-[Arial,sans-serif] text-[35px] font-black leading-none text-[#38bdf8]">
+              S
+            </div>
+
+            {/* LOGO TEXT */}
+
+            <div className="flex flex-col leading-none">
+              <h2 className="m-0 text-[28px] font-bold tracking-[1px] text-[#38bdf8]">
+                STEPS
+              </h2>
+
+              <span className="mt-[4px] text-[12px] tracking-[3px] text-[#38bdf8]">
+                INFOTECH
+              </span>
+            </div>
+          </Link>
+
+          {/* DESCRIPTION */}
+
+          <p className="m-0 text-[15px] font-medium leading-[27px] text-white sm:text-[16px] sm:leading-[30px]">
+            We build digital experience
+            <br />
+            that inspire and create
+            <br />
+            value for businesses
+            <br />
+            worldwide.
           </p>
-          <div className="flex items-center gap-3 mt-5">
-            <a href="#" aria-label="Facebook" className="hover:text-brand-teal transition-colors">
+
+          {/* SOCIAL ICONS */}
+
+          <div className="mt-[22px] flex items-center gap-[18px] sm:mt-[28px] sm:gap-[20px]">
+            {/* X */}
+
+            <a
+              href="#"
+              aria-label="X"
+              className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-black text-[13px] text-white transition duration-300 hover:-translate-y-[3px]"
+            >
+              X
+            </a>
+
+            {/* INSTAGRAM */}
+
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="flex h-[24px] w-[24px] items-center justify-center text-[15px] text-[#ff4d91] transition duration-300 hover:-translate-y-[3px]"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* FACEBOOK */}
+
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="flex h-[24px] w-[24px] items-center justify-center text-[15px] text-[#4285f4] transition duration-300 hover:-translate-y-[3px]"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" aria-label="LinkedIn" className="hover:text-brand-teal transition-colors">
+
+            {/* LINKEDIN */}
+
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="flex h-[24px] w-[24px] items-center justify-center text-[15px] text-[#2496d8] transition duration-300 hover:-translate-y-[3px]"
+            >
               <FaLinkedinIn />
-            </a>
-            <a href="#" aria-label="X" className="hover:text-brand-teal transition-colors">
-              <FaXTwitter />
-            </a>
-            <a href="#" aria-label="Instagram" className="hover:text-brand-teal transition-colors">
-              <FaInstagram />
             </a>
           </div>
         </div>
 
+        {/* =================================================
+            QUICK LINKS
+        ================================================== */}
+
         <div>
-          <h4 className="font-heading text-base mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm text-white/60">
-            {QUICK_LINKS.map((link) => (
-              <li key={link.label}>
-                <Link to={link.to} className="hover:text-brand-teal transition-colors">
-                  {link.label}
+          <h3 className="mb-[15px] text-[21px] font-bold text-white lg:mb-[18px] lg:text-[22px]">
+            Quick Links
+          </h3>
+
+          <ul className="m-0 list-none p-0">
+            {quickLinks.map((item) => (
+              <li key={item.name} className="mb-[7px]">
+                <Link
+                  to={item.path}
+                  className="text-[16px] leading-[1.45] text-white transition duration-300 hover:pl-[3px] hover:text-[#2dd4bf] lg:text-[17px]"
+                >
+                  {item.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
+        {/* =================================================
+            OUR SERVICES
+        ================================================== */}
+
         <div>
-          <h4 className="font-heading text-base mb-4">Our Services</h4>
-          <ul className="space-y-2 text-sm text-white/60">
-            {SERVICES.map((link) => (
-              <li key={link}>
-                <a href="#" className="hover:text-brand-teal transition-colors">
-                  {link}
-                </a>
+          <h3 className="mb-[15px] text-[21px] font-bold text-white lg:mb-[18px] lg:text-[22px]">
+            Our Services
+          </h3>
+
+          <ul className="m-0 list-none p-0">
+            {services.map((service) => (
+              <li key={service} className="mb-[7px]">
+                <Link
+                  to="/services"
+                  className="text-[16px] leading-[1.45] text-white transition duration-300 hover:pl-[3px] hover:text-[#2dd4bf] lg:text-[17px]"
+                >
+                  {service}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        <div>
-          <h4 className="font-heading text-base mb-4">Contact Us</h4>
-          <ul className="space-y-3 text-sm text-white/60">
-            <li className="flex items-start gap-2">
-              <FaLocationDot className="mt-1 text-brand-teal shrink-0" />
-              123, Tawheed Heights, Kondhwa Kh, Pune-411048, India
-            </li>
-            <li className="flex items-center gap-2">
-              <FaPhone className="text-brand-teal shrink-0" /> +91 9876543210
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope className="text-brand-teal shrink-0" /> stepsinfotech@org.com
-            </li>
-          </ul>
-        </div>
-      </div>
+        {/* =================================================
+            CONTACT US
+        ================================================== */}
 
-      <div className="border-t border-white/10 text-center text-xs text-white/40 py-5">
-        © 2026 Steps Infotech. All Rights Reserved.
-      </div>
+        <div className="min-w-0">
+          <h3 className="mb-[15px] text-[21px] font-bold text-white lg:mb-[18px] lg:text-[22px]">
+            Contact Us
+          </h3>
 
-      {/* Bottom CTA strip — id="contact" is what "Get In Touch" / "Contact us"
-          buttons across the whole site scroll to */}
-      <div id="contact" className="bg-brand-teal scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-6 md:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center text-white text-lg shrink-0">
-              <FaComments />
-            </span>
-            <div>
-              <h3 className="font-heading text-white text-base md:text-lg">
-                Ready to Transform Your Business?
-              </h3>
-              <p className="text-white/80 text-sm">
-                Let's build the right solution for your business and drive real results.
-              </p>
-            </div>
+          {/* ADDRESS */}
+
+          <div className="mb-[20px] flex items-start gap-[17px] lg:mb-[24px]">
+            <FaMapMarkerAlt className="mt-[5px] shrink-0 text-[18px] text-[#079f9a]" />
+
+            <p className="m-0 text-[14px] leading-[21px] text-white sm:text-[15px]">
+              123,Tawheed Heights ,
+              <br />
+              Kondhwa kh,
+              <br />
+              Pune-411048 , India
+            </p>
           </div>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-brand-navy text-white font-semibold px-6 py-3 rounded-md hover:bg-brand-desc transition-colors shrink-0"
-          >
-            Get Free Consultation <FaArrowRight />
-          </a>
+
+          {/* PHONE */}
+
+          <div className="mb-[20px] flex items-start gap-[17px] lg:mb-[24px]">
+            <FaPhoneAlt className="mt-[5px] shrink-0 text-[18px] text-[#079f9a]" />
+
+            <p className="m-0 text-[14px] leading-[21px] text-white sm:text-[15px]">
+              +91 9876543210
+            </p>
+          </div>
+
+          {/* EMAIL */}
+
+          <div className="flex items-start gap-[17px]">
+            <FaEnvelope className="mt-[5px] shrink-0 text-[18px] text-[#079f9a]" />
+
+            <p className="m-0 break-all text-[14px] leading-[21px] text-white sm:text-[15px]">
+              stepsinfotech@org.com
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Floating chatbot launcher */}
-      <button
-        aria-label="Open chatbot"
-        className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-brand-teal text-white text-xl flex items-center justify-center shadow-lg hover:bg-brand-desc transition-colors z-50"
-      >
-        <FaRobot />
-      </button>
+      {/* =====================================================
+          FOOTER BOTTOM
+      ====================================================== */}
+
+      <div className="min-h-[52px] w-full border-t-2 border-dashed border-black/75 px-[5%] py-[18px] lg:px-[8%] lg:py-[12px]">
+        <div className="flex flex-col items-center justify-between gap-[15px] text-center md:flex-row md:text-left">
+          {/* COPYRIGHT */}
+
+          <div className="flex flex-wrap items-center justify-center gap-[10px] text-[13px] font-medium text-white sm:text-[14px] lg:text-[18px]">
+            <span className="flex h-[24px] w-[24px] shrink-0 items-center justify-center rounded-full border-2 border-black text-[17px] font-bold text-black">
+              ©
+            </span>
+
+            <span>
+              2026 Steps Infotech, All Rights Reserved
+            </span>
+          </div>
+
+          {/* LEGAL */}
+
+          <div className="flex items-center gap-[10px] sm:gap-[14px]">
+            <Link
+              to="/privacy-policy"
+              className="text-[13px] text-white transition duration-300 hover:text-[#2dd4bf] sm:text-[14px] lg:text-[17px]"
+            >
+              Privacy Policy
+            </Link>
+
+            <span className="text-[16px] text-white sm:text-[18px]">
+              |
+            </span>
+
+            <Link
+              to="/terms"
+              className="text-[13px] text-white transition duration-300 hover:text-[#2dd4bf] sm:text-[14px] lg:text-[17px]"
+            >
+              Term & Conditions
+            </Link>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
+
+export default footer;
