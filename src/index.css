@@ -3,14 +3,37 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');*/
 
 @theme {
-  /* Brand colors */
-  --color-brand-navy: #061D24;   /* header / footer bg */
+  /* ── Brand colors (source of truth — logo/identity) ── */
+  --color-brand-navy: #061D24;   /* header / footer bg, strongest dark surface */
   --color-brand-info: #E3FAFB;   /* light info bg */
-  --color-brand-teal: #0F7C7A;   /* buttons / accents */
-  --color-brand-desc: #155361;   /* description bg */
+  --color-brand-teal: #0F7C7A;   /* primary buttons / links / accents */
+  --color-brand-desc: #155361;   /* description bg, secondary dark surface */
+
+  /* ── Derived brand shades (for states, not new colors) ── */
+  --color-brand-teal-dark: #0B5F5D;   /* hover/active state for teal */
+  --color-brand-teal-light: #3DA6A2;  /* teal on dark backgrounds, subtle accents */
+  --color-brand-cyan: #12CBD8;        /* the ONE approved "pop" accent — sparingly, for highlights/CTAs that need to stand out from teal */
+
+  /* ── Semantic text ── */
+  --color-text-strong: #08131A;   /* headings, high-emphasis text */
+  --color-text-body: #33474D;     /* default paragraph text */
+  --color-text-muted: #6B7F84;    /* captions, metadata, placeholders */
+  --color-text-inverse: #F4FBFB;  /* text on navy/teal/dark surfaces */
+
+  /* ── Semantic surfaces ── */
+  --color-surface: #FFFFFF;         /* default card/page surface */
+  --color-surface-alt: #F5FAFA;     /* subtle section band, alternates with white */
+  --color-surface-dark: var(--color-brand-navy);
+  --color-border: #DCE8E8;          /* default hairline border */
+  --color-border-dark: rgba(255,255,255,0.12); /* hairline border on dark surfaces */
+
+  /* ── Status (badges, form validation, ratings) ── */
+  --color-status-success: #1E8E5A;
+  --color-status-warning: #C98A1B;
+  --color-status-error: #C74B3F;
 
   /* Fonts */
-  --font-heading: "Boldonse", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-body: "Poppins", sans-serif;
 }
 @theme {
@@ -23,31 +46,14 @@
   }
 }
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
+  font: 18px/145% var(--font-body);
   letter-spacing: 0.18px;
-  /* FIX: force light only — this site has a fixed brand identity,
+  /* Force light only — this site has a fixed brand identity,
      it should never flip to a dark palette based on OS/browser
-     preference. This single change is what was making your
-     backgrounds turn black. */
+     preference. */
   color-scheme: light;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--color-text-body);
+  background: var(--color-surface);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -85,10 +91,11 @@ body {
 }
 
 h1,
-h2 {
-  font-family: var(--heading);
+h2,
+h3 {
+  font-family: var(--font-heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--color-text-strong);
 }
 
 h1 {
@@ -113,17 +120,13 @@ p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
+code {
+  font-family: ui-monospace, Consolas, monospace;
   display: inline-flex;
   border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  color: var(--color-text-strong);
+  background: var(--color-surface-alt);
 }
