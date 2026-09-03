@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer/footer";
 
 // This is the ONE place Navbar and Footer get rendered.
 // Every page in the site is wrapped by this automatically once

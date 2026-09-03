@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 import {
   FaPhoneAlt,
@@ -12,15 +13,12 @@ import {
   FaTimes,
 } from "react-icons/fa";
 
-function navbar() {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   const navItems = [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Solutions", path: "/solutions" },
@@ -31,110 +29,64 @@ function navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Was 3 near-identical hand-written divs — now one array + one .map()
+  const contactInfo = [
+    { icon: FaPhoneAlt, text: "+91 9876543210", visibility: "" },
+    { icon: FaEnvelope, text: "stepsinfotech@org.com", visibility: "hidden sm:flex" },
+    { icon: FaMapMarkerAlt, text: "Pune Maharashtra", visibility: "hidden md:flex" },
+  ];
+
+  // Was 4 near-identical <a> tags — now one array + one .map()
+  const socialLinks = [
+    { label: "X", icon: () => "𝕏" },
+    { label: "Instagram", icon: FaInstagram },
+    { label: "Facebook", icon: FaFacebookF },
+    { label: "LinkedIn", icon: FaLinkedinIn },
+  ];
+
   return (
     <header className="sticky top-0 z-[9999] w-full bg-white">
-      {/* =====================================================
-          TOP BAR
-      ====================================================== */}
-
+      {/* TOP BAR */}
       <div className="w-full bg-[#111c2b] text-white">
         <div className="mx-auto flex h-[34px] w-[92%] max-w-[1320px] items-center justify-between">
-          {/* LEFT CONTACT */}
           <div className="flex items-center gap-5 md:gap-8">
-            {/* PHONE */}
-            <div className="flex items-center gap-2 whitespace-nowrap text-[10px] font-medium sm:text-[11px]">
-              <FaPhoneAlt className="text-[12px] text-[#079c9c]" />
-              <span>+91 9876543210</span>
-            </div>
-
-            {/* EMAIL */}
-            <div className="hidden items-center gap-2 whitespace-nowrap text-[10px] font-medium sm:flex sm:text-[11px]">
-              <FaEnvelope className="text-[13px] text-[#079c9c]" />
-              <span>stepsinfotech@org.com</span>
-            </div>
-
-            {/* LOCATION */}
-            <div className="hidden items-center gap-2 whitespace-nowrap text-[10px] font-medium md:flex md:text-[11px]">
-              <FaMapMarkerAlt className="text-[13px] text-[#079c9c]" />
-              <span>Pune Maharashtra</span>
-            </div>
+            {contactInfo.map(({ icon: Icon, text, visibility }) => (
+              <div
+                key={text}
+                className={`items-center gap-2 whitespace-nowrap text-[10px] font-medium sm:text-[11px] flex ${visibility}`}
+              >
+                <Icon className="text-[12px] text-[#079c9c]" />
+                <span>{text}</span>
+              </div>
+            ))}
           </div>
 
-          {/* SOCIAL LINKS */}
           <div className="hidden items-center gap-3 sm:flex">
-            <a
-              href="#"
-              aria-label="X"
-              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
-            >
-              𝕏
-            </a>
-
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
-            >
-              <FaFacebookF />
-            </a>
-
-            <a
-              href="#"
-              aria-label="LinkedIn"
-              className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
-            >
-              <FaLinkedinIn />
-            </a>
+            {socialLinks.map(({ label, icon: Icon }) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className="flex h-5 w-5 items-center justify-center text-[11px] transition hover:text-[#0ba5a5]"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* =====================================================
-          MAIN NAVBAR
-      ====================================================== */}
-
+      {/* MAIN NAVBAR */}
       <nav className="w-full border-b border-gray-200 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
         <div className="mx-auto flex h-[58px] w-[92%] max-w-[1320px] items-center justify-between">
-          {/* =================================================
-              LOGO
-          ================================================== */}
-
-          <Link
-            to="/"
-            onClick={closeMenu}
-            className="flex shrink-0 items-center"
-          >
-            {/* S SYMBOL */}
-            <div className="mr-2 flex h-[42px] w-[35px] items-center justify-center">
-              <span className="font-[Arial,sans-serif] text-[32px] font-black italic leading-none text-[#078f92]">
-                S
-              </span>
-            </div>
-
-            {/* LOGO TEXT */}
-            <div className="flex flex-col leading-none">
-              <span className="text-[23px] font-extrabold tracking-[-0.5px] text-[#193b48]">
-                STEPS
-              </span>
-
-              <span className="mt-[3px] text-[9px] font-semibold tracking-[2px] text-[#078f92]">
-                INFOTECH
-              </span>
-            </div>
+          {/* LOGO — was: a fake "S" built from a <span>, plus text spans.
+              Now: your real logo.png. Link now correctly goes home ("/"),
+              not to the image file path. */}
+          <Link to="/" onClick={closeMenu} className="flex shrink-0 items-center">
+            <img src={logo} alt="Steps Infotech" className="h-10 w-auto" />
           </Link>
 
-          {/* =================================================
-              DESKTOP MENU
-          ================================================== */}
-
+          {/* DESKTOP MENU */}
           <div className="hidden h-full items-center lg:flex">
             <ul className="flex h-full items-center gap-[25px]">
               {navItems.map((item) => (
@@ -143,16 +95,13 @@ function navbar() {
                     to={item.path}
                     className={({ isActive }) =>
                       `relative flex h-full items-center whitespace-nowrap text-[13px] font-semibold transition ${
-                        isActive
-                          ? "text-[#079c9c]"
-                          : "text-[#172033] hover:text-[#079c9c]"
+                        isActive ? "text-[#079c9c]" : "text-[#172033] hover:text-[#079c9c]"
                       }`
                     }
                   >
                     {({ isActive }) => (
                       <>
                         {item.name}
-
                         {isActive && (
                           <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#079c9c]" />
                         )}
@@ -163,7 +112,6 @@ function navbar() {
               ))}
             </ul>
 
-            {/* GET IN TOUCH */}
             <Link
               to="/contact"
               className="ml-6 flex h-[36px] shrink-0 items-center justify-center rounded-[5px] bg-[#079c9c] px-[15px] text-[12px] font-semibold whitespace-nowrap text-white transition hover:-translate-y-[1px] hover:bg-[#067c7e]"
@@ -172,10 +120,7 @@ function navbar() {
             </Link>
           </div>
 
-          {/* =================================================
-              MOBILE MENU BUTTON
-          ================================================== */}
-
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -187,15 +132,10 @@ function navbar() {
           </button>
         </div>
 
-        {/* =================================================
-            MOBILE MENU
-        ================================================== */}
-
+        {/* MOBILE MENU */}
         <div
           className={`overflow-hidden border-t border-gray-200 bg-white shadow-[0_10px_20px_rgba(0,0,0,0.08)] transition-all duration-300 lg:hidden ${
-            menuOpen
-              ? "max-h-[600px] opacity-100"
-              : "pointer-events-none max-h-0 opacity-0"
+            menuOpen ? "max-h-[600px] opacity-100" : "pointer-events-none max-h-0 opacity-0"
           }`}
         >
           <div className="mx-auto flex w-[90%] flex-col py-2">
@@ -206,9 +146,7 @@ function navbar() {
                 onClick={closeMenu}
                 className={({ isActive }) =>
                   `border-b border-gray-100 px-1 py-3 text-[14px] font-semibold transition ${
-                    isActive
-                      ? "text-[#079c9c]"
-                      : "text-[#172033] hover:text-[#079c9c]"
+                    isActive ? "text-[#079c9c]" : "text-[#172033] hover:text-[#079c9c]"
                   }`
                 }
               >
@@ -216,9 +154,9 @@ function navbar() {
               </NavLink>
             ))}
 
-            {/* MOBILE GET IN TOUCH */}
+            {/* FIX: this used to link to "/" instead of "/contact" like the desktop version */}
             <Link
-              to="/"
+              to="/contact"
               onClick={closeMenu}
               className="mt-3 mb-2 flex h-[42px] items-center justify-center rounded-[5px] bg-[#079c9c] text-[14px] font-semibold text-white transition hover:bg-[#067c7e]"
             >
@@ -231,4 +169,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;
