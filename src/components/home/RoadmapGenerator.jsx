@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   ArrowDown,
   ArrowRight,
@@ -1974,6 +1974,9 @@ export default function RoadmapGenerator() {
 
   const [openMilestones, setOpenMilestones] = useState([]);
 
+  // Ref for the generated roadmap section so we can scroll to it
+  const roadmapSectionRef = useRef(null);
+
   /* -------------------------------------------------------
      Generate Roadmap
   ------------------------------------------------------- */
@@ -1986,6 +1989,25 @@ export default function RoadmapGenerator() {
     setGenerated(true);
     setOpenMilestones([]);
   };
+
+  /* -------------------------------------------------------
+     Auto-scroll to roadmap section once it's generated
+  ------------------------------------------------------- */
+
+  useEffect(() => {
+    if (generated && roadmap.length > 0 && roadmapSectionRef.current) {
+      // Small timeout ensures the section has rendered/painted
+      // before we try to scroll to it.
+      const timer = setTimeout(() => {
+        roadmapSectionRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [generated, roadmap]);
 
   /* -------------------------------------------------------
      Toggle milestone details
@@ -2423,7 +2445,10 @@ export default function RoadmapGenerator() {
 
         {generated && roadmap.length > 0 && (
 
-          <div className="mt-8 rounded-3xl border border-cyan-400/30 bg-[#003f46] p-5 shadow-2xl md:p-8">
+          <div
+            ref={roadmapSectionRef}
+            className="mt-8 scroll-mt-6 rounded-3xl border border-cyan-400/30 bg-[#003f46] p-5 shadow-2xl md:p-8"
+          >
 
             {/* Header */}
 
