@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 
@@ -42,7 +43,8 @@ const solutionsData = [
       { name: "Python", icon: "logos:python" },
       { name: "PHP", icon: "logos:php" },
     ],
-    description: "Robust and scalable server-side solutions for modern applications.",
+    description:
+      "Robust and scalable server-side solutions for modern applications.",
   },
 
   {
@@ -103,7 +105,8 @@ const solutionsData = [
       { name: "Kotlin", icon: "logos:kotlin" },
       { name: "Flutter", icon: "logos:flutter" },
     ],
-    description: "Cross-platform mobile solutions for better user experience.",
+    description:
+      "Cross-platform mobile solutions for better user experience.",
   },
 
   {
@@ -123,7 +126,8 @@ const solutionsData = [
       { name: "Jenkins", icon: "logos:jenkins" },
       { name: "GitLab", icon: "logos:gitlab" },
     ],
-    description: "Streamlining development & operations for faster and reliable delivery.",
+    description:
+      "Streamlining development & operations for faster and reliable delivery.",
   },
 
   {
@@ -144,7 +148,8 @@ const solutionsData = [
       { name: "Tableau", icon: "logos:tableau-icon" },
       { name: "Python", icon: "logos:python" },
     ],
-    description: "Transforming data into actionable insights for smarter decisions.",
+    description:
+      "Transforming data into actionable insights for smarter decisions.",
   },
 
   {
@@ -165,7 +170,8 @@ const solutionsData = [
       { name: "PyTorch", icon: "logos:pytorch-icon" },
       { name: "Scikit-Learn", icon: "simple-icons:scikitlearn" },
     ],
-    description: "Intelligent solutions powered by Machine Learning and AI.",
+    description:
+      "Intelligent solutions powered by Machine Learning and AI.",
   },
 
   {
@@ -185,27 +191,8 @@ const solutionsData = [
       { name: "Kali Linux", icon: "devicon:kalilinux" },
       { name: "Burp Suite", icon: "devicon:burpsuite" },
     ],
-    description: "Protecting systems and data with advanced security technologies.",
-  },
-
-  {
-    title: "Others",
-    icon: "mdi:view-grid-outline",
-    info: "Explore additional platforms and tools used to design, build and manage modern digital products.",
-    roadmap: [
-      "Understand the purpose of each platform",
-      "Learn basic design principles",
-      "Explore Figma for UI/UX",
-      "Learn WordPress or Shopify",
-      "Build practical projects",
-      "Create a professional portfolio",
-    ],
-    logos: [
-      { name: "WordPress", icon: "logos:wordpress-icon" },
-      { name: "Shopify", icon: "logos:shopify" },
-      { name: "Figma", icon: "logos:figma" },
-    ],
-    description: "Building with powerful tools and platforms for your business.",
+    description:
+      "Protecting systems and data with advanced security technologies.",
   },
 ];
 
@@ -223,18 +210,19 @@ export default function PowerSolutions() {
           </h2>
 
           <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
-            {solutionsData.map((card, index) => (
+            {solutionsData.map((card) => (
               <button
                 key={card.title}
                 onClick={() => setSelectedTechnology(card)}
-                className={`flex min-h-[260px] flex-col rounded-2xl border border-gray-100 bg-white p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-teal-500 ${
-                  index === solutionsData.length - 1 ? "lg:col-start-2" : ""
-                }`}
+                className="flex min-h-[260px] flex-col rounded-2xl border border-gray-100 bg-white p-6 text-left shadow-[0_8px_30px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.15)] focus:outline-none focus:ring-2 focus:ring-teal-500"
               >
                 {/* TITLE */}
                 <div className="mb-6 flex items-center gap-3">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-teal-100 bg-teal-50">
-                    <Icon icon={card.icon} className="h-5 w-5 text-teal-700" />
+                    <Icon
+                      icon={card.icon}
+                      className="h-5 w-5 text-teal-700"
+                    />
                   </div>
 
                   <h3 className="text-[15px] font-bold tracking-tight text-gray-900">
@@ -264,10 +252,12 @@ export default function PowerSolutions() {
                   ))}
                 </div>
 
+                {/* DESCRIPTION */}
                 <p className="mt-auto pt-7 text-[12px] font-bold leading-6 text-gray-700">
                   {card.description}
                 </p>
 
+                {/* ROADMAP */}
                 <span className="mt-4 text-xs font-bold text-teal-700">
                   Explore Roadmap →
                 </span>
@@ -280,9 +270,10 @@ export default function PowerSolutions() {
       {/* ================= DETAILS MODAL ================= */}
       {selectedTechnology && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+
           <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-10">
 
-            {/* Close Button */}
+            {/* CLOSE BUTTON */}
             <button
               onClick={() => setSelectedTechnology(null)}
               className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-xl font-bold text-gray-600 transition hover:bg-red-50 hover:text-red-500"
@@ -291,9 +282,10 @@ export default function PowerSolutions() {
               ×
             </button>
 
-            {/* Modal Heading */}
+            {/* MODAL HEADING */}
             <div className="pr-10">
               <div className="flex items-center gap-3">
+
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-50">
                   <Icon
                     icon={selectedTechnology.icon}
@@ -305,10 +297,12 @@ export default function PowerSolutions() {
                   <p className="text-xs font-bold tracking-widest text-teal-700">
                     TECHNOLOGY ROADMAP
                   </p>
+
                   <h2 className="mt-1 text-2xl font-bold text-gray-900 sm:text-3xl">
                     {selectedTechnology.title}
                   </h2>
                 </div>
+
               </div>
 
               <p className="mt-6 leading-7 text-gray-600">
@@ -316,7 +310,7 @@ export default function PowerSolutions() {
               </p>
             </div>
 
-            {/* Study Plan */}
+            {/* STUDY PLAN */}
             <div className="mt-8">
               <h3 className="text-lg font-bold text-gray-900">
                 Your Study Plan
@@ -325,6 +319,7 @@ export default function PowerSolutions() {
               <div className="mt-5 space-y-4">
                 {selectedTechnology.roadmap.map((step, index) => (
                   <div key={step} className="flex gap-4">
+
                     <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-700 text-xs font-bold text-white">
                       {index + 1}
                     </div>
@@ -332,12 +327,13 @@ export default function PowerSolutions() {
                     <p className="pt-1 text-sm leading-6 text-gray-600">
                       {step}
                     </p>
+
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Technologies */}
+            {/* TECHNOLOGIES */}
             <div className="mt-8 border-t border-gray-100 pt-6">
               <p className="text-sm font-bold text-gray-900">
                 Technologies You'll Explore
@@ -350,6 +346,7 @@ export default function PowerSolutions() {
                     className="flex items-center gap-2 rounded-full bg-gray-50 px-3 py-2"
                   >
                     <Icon icon={logo.icon} className="h-5 w-5" />
+
                     <span className="text-xs font-semibold text-gray-700">
                       {logo.name}
                     </span>
@@ -364,3 +361,4 @@ export default function PowerSolutions() {
     </>
   );
 }
+
