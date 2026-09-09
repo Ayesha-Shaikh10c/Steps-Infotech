@@ -15,7 +15,8 @@ import Services from "./pages/services/services";
 import Portfolio from "./pages/portfolio/portfolio";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 import Testimonials from "./pages/testimonials/testimonials";
-// import Careers from "./pages/careers/careers";
+import Careers from "./pages/careers/careers";
+import JobApplication from "./components/careers/InsidePages/JobApplication/JobApplication";
 import Blog from "./pages/blog/blog";
 import ArticleDetails from "./components/blog/ArticleDetails";
 
@@ -62,7 +63,8 @@ export default function App() {
         <Route path="/portfolio" element={<Portfolio />} /> 
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
         <Route path="/testimonials" element={<Testimonials />} /> 
-        {/* <Route path="/careers" element={<Careers />} /> */}
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/job-application" element={<JobApplication />} />
         { <Route path="/blog" element={<Blog />} /> }
         { <Route path="/article/:id" element={<ArticleDetails />}/>}
       </Route>
