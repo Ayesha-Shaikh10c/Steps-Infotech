@@ -1,11 +1,12 @@
-import CareerHero from "./AllSection/CareerHero/CareerHero";
-import WhyJoinUs from "./AllSection/WhyJoinUs/WhyJoinUs";
-import OpenPositions from "./AllSection/OpenPositions/OpenPositions";
-import Internship from "./AllSection/Internship/Internship";
-import HiringProcess from "./AllSection/HiringProcess/HiringProcess";
-import LifeAtSteps from "./AllSection/LifeAtSteps/LifeAtSteps";
+import CareerHero from "../../components/careers/CareerHero";
+import WhyJoinUs from "../../components/careers/WhyJoinUs";
+import OpenPositions from "../../components/careers/OpenPositions";
+import Internship from "../../components/careers/Internship";
+import HiringProcess from "../../components/careers/HiringProcess";
+import LifeAtSteps from "../../components/careers/LifeAtSteps";
 
-import JobDetails from "./AllSection/InsidePages/JobDetails/JobDetails";
+import JobApplication from "../../components/careers/InsidePages/JobApplication/JobApplication";
+import JobDetails from "../../components/careers/InsidePages/JobDetails/JobDetails";
 
 import { useState } from "react";
 

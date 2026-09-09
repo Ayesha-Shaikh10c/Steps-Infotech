@@ -205,7 +205,7 @@ function JobApplication() {
 
           {/* BACK BUTTON */}
           <a
-            href="/Careers"
+            href="/careers"
             className="inline-flex items-center justify-center h-[43px] mt-6 px-[22px] rounded-md bg-[#079c9c] text-white no-underline text-[13px] font-bold transition-all duration-200 hover:bg-[#067c7e] hover:-translate-y-0.5"
           >
             ← Back to Careers
@@ -773,7 +773,7 @@ function JobApplication() {
             </button>
 
             <a
-              href="/Careers"
+              href="/careers"
               className="text-center text-slate-500 no-underline text-[13px] font-semibold transition-colors hover:text-[#079c9c]"
             >
               Cancel

@@ -1,6 +1,6 @@
-import Third from "../../../../assets/Images/Third.png";
-import Fourth from "../../../../assets/Images/Fourth.png";
-import Five from "../../../../assets/Images/Five.png";
+import Third from "../../assets/careers/Images/Third.png";
+import Fourth from "../../assets/careers/Images/Fourth.png";
+import Five from "../../assets/careers/Images/Five.png";
 
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";

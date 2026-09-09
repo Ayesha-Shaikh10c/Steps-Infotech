@@ -740,7 +740,7 @@ function JobDetails({ jobId = 1 }) {
             {/* BACK TO CAREERS */}
 
             <a
-              href="Careers"
+              href="careers"
               className="
                 block
                 mt-[15px]

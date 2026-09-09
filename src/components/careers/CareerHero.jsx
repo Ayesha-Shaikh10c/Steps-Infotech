@@ -1,4 +1,4 @@
-import First from "../../../../assets/Images/First.png";
+import First from "../../assets/careers/Images/First.png";
 import { useNavigate } from "react-router-dom";
 
 function CareerHero() {

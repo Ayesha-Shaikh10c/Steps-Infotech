@@ -1,4 +1,4 @@
-import Second from "../../../../assets/Images/Second.png";
+import Second from "../../assets/careers/Images/Second.png";
 
 import {
   FaClock,
