@@ -1,21 +1,28 @@
 import { FaArrowRight } from "react-icons/fa6";
+import Button from "../button/button";
 
 export default function SolutionsHero() {
   return (
     <section
-      className="relative w-full bg-brand-navy overflow-hidden"
+      className="
+        page-hero
+        relative
+        w-full
+        overflow-hidden
+        bg-brand-navy
+      "
       style={{
         backgroundImage: "url('/src/assets/hero-office.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* dark overlay so text stays legible over any hero image */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-brand-navy/80" />
 
-      {/* Decorative tech background: circuit lines + nodes */}
+      {/* Decorative tech background */}
       <svg
-        className="absolute inset-0 w-full h-full pointer-events-none opacity-30"
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-30"
         viewBox="0 0 1440 500"
         preserveAspectRatio="xMidYMid slice"
         xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +37,7 @@ export default function SolutionsHero() {
           <path d="M1000 60 L1140 60 L1140 130" />
           <path d="M300 300 L300 380 L420 380" />
         </g>
+
         <g fill="#0F7C7A">
           <circle cx="100" cy="60" r="5" />
           <circle cx="280" cy="60" r="4" />
@@ -59,28 +67,73 @@ export default function SolutionsHero() {
           <circle cx="300" cy="380" r="5" />
           <circle cx="420" cy="380" r="4" />
         </g>
-        {/* Faint hex/code motif, top-right corner */}
-        <g fill="#E3FAFB" opacity="0.5" fontFamily="ui-monospace, monospace" fontSize="13">
+
+        <g
+          fill="#E3FAFB"
+          opacity="0.5"
+          fontFamily="ui-monospace, monospace"
+          fontSize="13"
+        >
           <text x="1150" y="420">{"</>"}</text>
           <text x="60" y="150">{"01"}</text>
           <text x="1300" y="120">{"{ }"}</text>
         </g>
       </svg>
 
-      <div className="relative max-w-3xl px-6 md:px-16 py-20 md:py-28 font-body">
-        <span className="inline-block text-brand-teal font-semibold tracking-widest text-xs md:text-sm mb-4">
+      <div
+        className="
+          relative
+          flex
+          h-full
+          max-w-3xl
+          flex-col
+          justify-center
+          px-6
+          md:px-16
+        "
+      >
+        <span
+          className="
+            mb-4
+            inline-block
+            font-body
+            text-xs
+            font-semibold
+            tracking-widest
+            text-brand-teal
+
+            md:text-sm
+          "
+        >
           OUR SOLUTIONS
         </span>
-        <h1 className="font-heading text-white text-3xl md:text-5xl leading-tight mb-6">
-          Empowering Business <br className="hidden md:block" />
+
+        <h1
+          className="
+            font-heading
+            text-3xl
+            font-bold
+            leading-tight
+            text-white
+
+            md:text-5xl
+          "
+        >
+          Empowering Business
+          <br className="hidden md:block" />
           With Smart Digital Solutions
         </h1>
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 bg-brand-teal text-white font-semibold px-6 py-3 rounded-md hover:bg-brand-desc transition-colors"
-        >
-          Contact us <FaArrowRight />
-        </a>
+
+        <div className="mt-6">
+          <Button
+            href="#contact"
+            variant="primary"
+            size="md"
+            icon={<FaArrowRight />}
+          >
+            Contact us
+          </Button>
+        </div>
       </div>
     </section>
   );
