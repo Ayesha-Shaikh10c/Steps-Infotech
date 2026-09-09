@@ -7,8 +7,6 @@ import {
   Users,
   TrendingUp,
   CheckCircle2,
-  BriefcaseBusiness,
-  GraduationCap,
 } from "lucide-react";
 
 const testimonials = [
@@ -75,64 +73,6 @@ export default function SuccessStories() {
         ====================================================== */}
 
         <div className="relative mx-auto max-w-6xl">
-
-          {/* ================= LEFT COMPANY CARD ================= */}
-
-          <div className="absolute left-0 top-2 hidden xl:block">
-
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a2930] px-5 py-4 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#12dce8]/40">
-
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#12dce8]/10">
-
-                <BriefcaseBusiness className="h-6 w-6 text-[#12dce8]" />
-
-              </div>
-
-              <div className="text-left">
-
-                <p className="text-base font-bold text-white">
-                  Industry Exposure
-                </p>
-
-                <p className="mt-1 text-xs text-gray-400">
-                  Learn through real projects
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* ================= RIGHT COMPANY CARD ================= */}
-
-          <div className="absolute right-0 top-2 hidden xl:block">
-
-            <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#0a2930] px-5 py-4 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#12dce8]/40">
-
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#12dce8]/10">
-
-                <GraduationCap className="h-6 w-6 text-[#12dce8]" />
-
-              </div>
-
-              <div className="text-left">
-
-                <p className="text-base font-bold text-white">
-                  Expert Mentorship
-                </p>
-
-                <p className="mt-1 text-xs text-gray-400">
-                  Guidance from industry experts
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
 
           {/* ================= CENTER HEADING ================= */}
 
