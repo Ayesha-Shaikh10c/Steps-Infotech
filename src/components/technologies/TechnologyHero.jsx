@@ -1,4 +1,3 @@
-
 import {
   SiJavascript,
   SiReact,
@@ -10,20 +9,56 @@ import {
 
 function TechnologyHero() {
   return (
-    <section className="w-full overflow-hidden bg-[#155b5d] py-7 sm:py-9 lg:py-10">
-      <div className="mx-auto flex w-[90%] max-w-[1280px] flex-col items-center justify-center gap-5 lg:flex-row lg:gap-8">
+    <section className="page-hero w-full overflow-hidden bg-[#155b5d]">
+      <div
+        className="
+          mx-auto
+          flex
+          h-full
+          w-[90%]
+          max-w-[1280px]
+          flex-col
+          items-center
+          justify-center
+          gap-5
 
-        {/* ========================================
-            LEFT SIDE - CONTENT
-        ========================================= */}
+          lg:flex-row
+          lg:gap-8
+        "
+      >
+        {/* LEFT SIDE */}
         <div className="w-full lg:w-[54%]">
           <div className="text-center lg:text-left">
+            <p
+              className="
+                mb-2
+                font-body
+                text-xs
+                font-semibold
+                tracking-[2px]
+                text-[#83a9aa]
 
-            <p className="mb-2 text-xs font-semibold tracking-[2px] text-[#83a9aa] sm:text-sm">
+                sm:text-sm
+              "
+            >
               OUR TECHNOLOGIES
             </p>
 
-            <h1 className="font-['Barlow_Condensed'] text-5xl font-bold leading-[0.88] tracking-[-1px] text-white sm:text-6xl md:text-7xl lg:text-[78px] xl:text-[86px]">
+            <h1
+              className="
+                font-heading
+                text-4xl
+                font-bold
+                leading-[0.98]
+                tracking-[-1px]
+                text-white
+
+                sm:text-5xl
+                md:text-6xl
+                lg:text-[64px]
+                xl:text-[72px]
+              "
+            >
               Technologies
               <br />
               We Use To Build
@@ -31,26 +66,43 @@ function TechnologyHero() {
               The Future
             </h1>
 
-            <p className="mx-auto mt-4 max-w-[590px] text-sm leading-6 text-white/70 sm:mt-5 sm:text-base sm:leading-7 lg:mx-0">
+            <p
+              className="
+                mx-auto
+                mt-4
+                max-w-[590px]
+                font-body
+                text-sm
+                leading-6
+                text-white/70
+
+                sm:mt-5
+                sm:text-base
+                sm:leading-7
+
+                lg:mx-0
+              "
+            >
               We leverage modern technologies and industry-leading tools to
               build secure, scalable, high-performing and future-ready digital
               solutions.
             </p>
-
           </div>
         </div>
 
-        {/* ========================================
-            RIGHT SIDE - TECHNOLOGY VISUAL
-        ========================================= */}
+        {/* RIGHT SIDE */}
         <div className="relative w-full max-w-[500px] lg:w-[46%]">
+          <div
+            className="
+              relative
+              mx-auto
+              h-[245px]
+              w-full
 
-          <div className="relative mx-auto h-[245px] w-full sm:h-[285px] md:h-[305px]">
-
-            {/* ====================================
-                TECHNOLOGY ICONS
-            ===================================== */}
-
+              sm:h-[285px]
+              md:h-[305px]
+            "
+          >
             {/* JavaScript */}
             <SiJavascript
               className="
@@ -62,6 +114,7 @@ function TechnologyHero() {
                 text-4xl
                 text-[#f7df1e]
                 drop-shadow-lg
+
                 sm:text-5xl
               "
             />
@@ -76,6 +129,7 @@ function TechnologyHero() {
                 text-4xl
                 text-[#23b9d5]
                 drop-shadow-lg
+
                 sm:text-5xl
                 md:text-6xl
               "
@@ -91,11 +145,12 @@ function TechnologyHero() {
                 text-4xl
                 text-[#ffd343]
                 drop-shadow-lg
+
                 sm:text-5xl
               "
             />
 
-            {/* Node.js */}
+            {/* Node */}
             <SiNodedotjs
               className="
                 absolute
@@ -105,6 +160,7 @@ function TechnologyHero() {
                 text-3xl
                 text-[#8bc34a]
                 drop-shadow-lg
+
                 sm:text-4xl
               "
             />
@@ -119,6 +175,7 @@ function TechnologyHero() {
                 text-3xl
                 text-[#65a845]
                 drop-shadow-lg
+
                 sm:text-4xl
               "
             />
@@ -133,14 +190,12 @@ function TechnologyHero() {
                 text-4xl
                 text-[#b3d0d8]
                 drop-shadow-lg
+
                 sm:text-5xl
               "
             />
 
-            {/* ====================================
-                LAPTOP
-            ===================================== */}
-
+            {/* LAPTOP */}
             <div
               className="
                 absolute
@@ -148,12 +203,12 @@ function TechnologyHero() {
                 left-1/2
                 w-[220px]
                 -translate-x-1/2
+
                 sm:w-[285px]
                 md:w-[300px]
               "
             >
-
-              {/* Laptop Screen */}
+              {/* Screen */}
               <div
                 className="
                   relative
@@ -163,12 +218,12 @@ function TechnologyHero() {
                   border-[5px]
                   border-[#c6c6c6]
                   bg-[linear-gradient(135deg,#b8dce7_0%,#b8dce7_50%,#59bfd9_50%,#59bfd9_100%)]
+
                   sm:h-[180px]
                   md:h-[185px]
                 "
               >
-
-                {/* User Avatar Head */}
+                {/* Avatar head */}
                 <div
                   className="
                     absolute
@@ -181,13 +236,14 @@ function TechnologyHero() {
                     border-2
                     border-[#6e7476]
                     bg-[#d3d3d3]
+
                     sm:top-6
                     sm:h-[58px]
                     sm:w-[58px]
                   "
                 />
 
-                {/* User Avatar Body */}
+                {/* Avatar body */}
                 <div
                   className="
                     absolute
@@ -200,15 +256,15 @@ function TechnologyHero() {
                     border-2
                     border-[#6e7476]
                     bg-[#d3d3d3]
+
                     sm:bottom-[23px]
                     sm:h-[62px]
                     sm:w-[124px]
                   "
                 />
-
               </div>
 
-              {/* Laptop Base */}
+              {/* Laptop base */}
               <div
                 className="
                   relative
@@ -219,20 +275,17 @@ function TechnologyHero() {
                   rounded-b-[35px]
                   bg-[#e5e5e5]
                   shadow-[0_8px_12px_rgba(0,0,0,0.2)]
+
                   sm:h-[38px]
                   sm:w-[330px]
                 "
               />
-
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );
 }
 
 export default TechnologyHero;
-

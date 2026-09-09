@@ -3,15 +3,6 @@
 // lets each screen have a different COMPOSITION (image-heavy, card
 // grid, editorial columns...) while the actual typography — the thing
 // visitors subconsciously read as "brand" — stays identical everywhere.
-//
-// Usage:
-//   <SectionHeading eyebrow="Our Solutions" title="What we build" />
-//   <SectionHeading
-//     title="Client Success Stories"
-//     subtitle="Real results from real partnerships."
-//     align="center"
-//     tone="dark"
-//   />
 
 export default function SectionHeading({
   eyebrow,
@@ -19,6 +10,7 @@ export default function SectionHeading({
   subtitle,
   align = "left",
   tone = "light",
+  divider = false,
   className = "",
 }) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
@@ -37,6 +29,11 @@ export default function SectionHeading({
         <p className={`font-body mt-4 text-base md:text-lg ${subtitleColor}`}>
           {subtitle}
         </p>
+      )}
+      {divider && (
+        <div
+          className={`w-16 h-0.5 bg-brand-teal mt-6 ${align === "center" ? "mx-auto" : ""}`}
+        />
       )}
     </div>
   );
