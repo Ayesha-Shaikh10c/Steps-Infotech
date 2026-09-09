@@ -154,104 +154,71 @@ body {
 
 
 /* =========================================================
-   HEADINGS
+   BASE TYPOGRAPHY
+   Tailwind component classes can override these defaults
    ========================================================= */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
 
-  font-family: var(--font-heading);
+    font-family: var(--font-heading);
 
-  color: var(--color-text-strong);
+    color: var(--color-text-strong);
 
-  font-weight: 700;
+    font-weight: 700;
 
-  line-height: 1.2;
+    line-height: 1.2;
 
-  letter-spacing: -0.4px;
+    letter-spacing: -0.4px;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }
-
-
-/* -------------------------
-   H1
-   ------------------------- */
-
-h1 {
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-}
-
-
-/* -------------------------
-   H2
-   ------------------------- */
-
-h2 {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
-
-/* -------------------------
-   H3
-   ------------------------- */
-
-h3 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-
-/* -------------------------
-   H4
-   ------------------------- */
-
-h4 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-
-/* -------------------------
-   H5
-   ------------------------- */
-
-h5 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-
-/* -------------------------
-   H6
-   ------------------------- */
-
-h6 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-
-/* =========================================================
-   PARAGRAPHS
-   ========================================================= */
-
-p {
-  margin: 0;
-
-  font-family: var(--font-body);
-
-  font-size: 16px;
-  line-height: 1.6;
-}
-
 
 /* =========================================================
    LINKS

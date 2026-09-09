@@ -1,4 +1,5 @@
 import React from "react";
+import portfolioImage from "../../assets/images/portfolio.png";
 
 const Hero = () => {
   return (
@@ -10,7 +11,6 @@ const Hero = () => {
         boxSizing: "border-box",
       }}
     >
-
       {/* HERO SECTION */}
       <section
         className="
@@ -21,7 +21,6 @@ const Hero = () => {
           items-center
           justify-between
           overflow-hidden
-
           md:h-[420px]
           lg:h-[500px]
         "
@@ -112,9 +111,7 @@ const Hero = () => {
         />
 
         {/* LEFT CONTENT */}
-        <div
-          className="relative z-10 w-[50%] max-w-[650px] text-white"
-        >
+        <div className="relative z-10 w-[50%] max-w-[650px] text-white">
           <p
             className="mb-[15px] font-body"
             style={{
@@ -166,6 +163,7 @@ const Hero = () => {
               flexWrap: "wrap",
             }}
           >
+            {/* View Case Studies Button */}
             <button
               className="font-body"
               style={{
@@ -181,21 +179,20 @@ const Hero = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#15969b";
-                e.currentTarget.style.transform =
-                  "translateY(-4px)";
+                e.currentTarget.style.transform = "translateY(-4px)";
                 e.currentTarget.style.boxShadow =
                   "0 10px 22px rgba(21,150,155,0.35)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = "#20aeb5";
-                e.currentTarget.style.transform =
-                  "translateY(0)";
+                e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
               View Case Studies →
             </button>
 
+            {/* Start Your Project Button */}
             <button
               className="font-body"
               style={{
@@ -211,16 +208,13 @@ const Hero = () => {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#20aeb5";
-                e.currentTarget.style.transform =
-                  "translateY(-4px)";
+                e.currentTarget.style.transform = "translateY(-4px)";
                 e.currentTarget.style.boxShadow =
                   "0 10px 22px rgba(21,150,155,0.25)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  "transparent";
-                e.currentTarget.style.transform =
-                  "translateY(0)";
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
@@ -239,19 +233,17 @@ const Hero = () => {
             w-[45%]
             items-center
             justify-center
-
             md:h-[340px]
             lg:h-[380px]
           "
         >
           <img
-            src="/portfolio.png"
+            src={portfolioImage}
             alt="Portfolio project"
             className="h-full w-full object-contain"
             style={{
               transition: "all 0.4s ease",
-              filter:
-                "drop-shadow(0 15px 30px rgba(0,0,0,0.30))",
+              filter: "drop-shadow(0 15px 30px rgba(0,0,0,0.30))",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform =
@@ -260,8 +252,7 @@ const Hero = () => {
                 "drop-shadow(0 20px 35px rgba(21,150,155,0.30))";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform =
-                "scale(1) translateY(0)";
+              e.currentTarget.style.transform = "scale(1) translateY(0)";
               e.currentTarget.style.filter =
                 "drop-shadow(0 15px 30px rgba(0,0,0,0.30))";
             }}
