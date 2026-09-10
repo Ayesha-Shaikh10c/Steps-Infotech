@@ -2,7 +2,6 @@ import {
   CalendarDays,
   Users,
   BriefcaseBusiness,
-  UserRound,
   Building2,
 } from "lucide-react";
 
@@ -34,11 +33,21 @@ const stats = [
   },
 ];
 
-export default function Stats() {
+function Stats() {
   return (
-    <section className="mx-auto max-w-[1024px] px-[13px] pt-[17px]">
+    <section className="mx-auto w-full max-w-[1024px] px-[10px] pt-[17px]">
 
-      <div className="flex h-[109px] items-center rounded-[27px] bg-[#a9f5f4] px-[8px] shadow-[0_7px_3px_rgba(0,0,0,0.3)]">
+      <div
+        className="
+          grid grid-cols-2
+          overflow-hidden
+          rounded-[27px]
+          bg-[#a9f5f4]
+          px-[6px] py-[13px]
+          shadow-[0_7px_3px_rgba(0,0,0,0.28)]
+          md:grid-cols-5
+        "
+      >
 
         {stats.map((item, index) => {
 
@@ -47,26 +56,32 @@ export default function Stats() {
           return (
             <div
               key={item.text}
-              className={`flex h-[52px] flex-1 items-center justify-center gap-[8px] ${
-                index !== 4
-                  ? "border-r border-[#4c8586]"
-                  : ""
-              }`}
+              className={`
+                flex min-h-[55px]
+                items-center justify-center
+                gap-[7px]
+                px-[8px]
+                ${
+                  index !== stats.length - 1
+                    ? "md:border-r md:border-[#4c8586]"
+                    : ""
+                }
+              `}
             >
 
               <Icon
-                size={34}
+                size={31}
                 strokeWidth={1.4}
-                className="text-[#298d91]"
+                className="shrink-0 text-[#298d91]"
               />
 
               <div className="leading-none">
 
-                <div className="text-[16px] font-normal text-[#075d68]">
+                <div className="text-[15px] font-normal text-[#075d68]">
                   {item.number}
                 </div>
 
-                <div className="mt-[7px] whitespace-nowrap text-[14px] font-medium">
+                <div className="mt-[6px] whitespace-nowrap text-[11px] font-medium text-black md:text-[12px]">
                   {item.text}
                 </div>
 
@@ -81,3 +96,5 @@ export default function Stats() {
     </section>
   );
 }
+
+export default Stats;
