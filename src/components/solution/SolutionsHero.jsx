@@ -67,7 +67,7 @@ export default function SolutionsHero() {
 
         <div className="mt-6">
           <Button
-            href="#contact"
+            href="/contact"
             variant="primary"
             size="md"
             icon={<FaArrowRight />}

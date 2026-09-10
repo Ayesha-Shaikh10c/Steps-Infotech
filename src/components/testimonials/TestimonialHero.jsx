@@ -1,4 +1,5 @@
 import React from "react";
+import testHero from "../../assets/images/testhero.png";
 
 const TestimonialHero = () => {
   return (
@@ -10,7 +11,7 @@ const TestimonialHero = () => {
         items-center
       "
       style={{
-        backgroundImage: "url('/assets/testimonial-bg.jpg')",
+        backgroundImage: `url(${testHero})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -26,7 +27,6 @@ const TestimonialHero = () => {
           w-full
           max-w-7xl
           px-6
-
           md:px-16
         "
       >
@@ -38,7 +38,6 @@ const TestimonialHero = () => {
               font-extrabold
               leading-tight
               text-[#092c3c]
-
               md:text-5xl
             "
           >
@@ -57,7 +56,6 @@ const TestimonialHero = () => {
               text-base
               leading-relaxed
               text-gray-700
-
               md:text-lg
             "
           >
