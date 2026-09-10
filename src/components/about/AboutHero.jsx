@@ -2,52 +2,26 @@ import { ArrowRight } from "lucide-react";
 
 export default function AboutHero() {
   return (
-    <section className="px-0">
+    <section className="page-hero relative flex items-center overflow-hidden bg-gray-50">
+      <div className="mx-auto w-full max-w-7xl px-6 text-center md:px-16">
+        <p className="font-body text-sm font-semibold tracking-[4px] text-[#079c9c]">
+          ABOUT
+        </p>
 
-      <div className="relative mx-auto h-[243px] max-w-[1024px] overflow-hidden rounded-b-[27px] shadow-[0_6px_3px_rgba(0,0,0,0.3)]">
+        <h1 className="mt-5 font-heading text-4xl font-bold text-[#08131A] md:text-5xl lg:text-6xl">
+          STEPS INFOTECH
+        </h1>
 
-        {/* Background */}
-        <img
-          src="/images/about-hero.png"
-          alt="Steps Infotech"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <p className="mx-auto mt-6 max-w-2xl font-body text-base leading-8 text-gray-600 md:text-lg">
+          We are a technology-driven company that builds innovative
+          digital solutions and connects talent with opportunities
+          across multiple domains.
+        </p>
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-[#006875]/75" />
-
-        {/* Content */}
-        <div className="relative z-10 px-[35px] pt-[10px] text-white">
-
-          <h1 className="text-[23px] font-normal leading-[1.45]">
-            ABOUT
-            <br />
-            STEPS INFOTECH
-          </h1>
-
-          <p className="mt-[26px] max-w-[385px] text-[15px] font-normal leading-[1.75]">
-            we are a technology - driven company that
-            <br />
-            builds innovatives digital solutions and connects
-            <br />
-            talent with opportunities across multiple domains.
-          </p>
-
-          <button className="mt-[11px] flex items-center gap-[10px] rounded-[13px] bg-[#11aeca] px-[17px] py-[7px] text-[16px] font-bold shadow-sm">
-
-            join our team
-
-            <ArrowRight
-              size={23}
-              strokeWidth={3}
-            />
-
-          </button>
-
-        </div>
-
+        <button className="mt-8 rounded-md bg-[#079c9c] px-7 py-3 font-body text-sm font-semibold text-white transition hover:bg-[#067c7e]">
+          Join Our Team
+        </button>
       </div>
-
     </section>
   );
 }

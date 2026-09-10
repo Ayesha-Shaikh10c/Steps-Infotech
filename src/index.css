@@ -1,19 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;500;600;700&display=swap');
+/* =========================================================
+   GOOGLE FONTS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
-/*@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap');*/
+
+
+/* =========================================================
+   TAILWIND THEME
+   ========================================================= */
 
 @theme {
-  /* Brand colors */
-  --color-brand-navy: #061D24;   /* header / footer bg */
-  --color-brand-info: #E3FAFB;   /* light info bg */
-  --color-brand-teal: #0F7C7A;   /* buttons / accents */
-  --color-brand-desc: #155361;   /* description bg */
 
-  /* Fonts */
-  --font-heading: "Boldonse", sans-serif;
+  /* -------------------------
+     Brand Colors
+     ------------------------- */
+
+  --color-brand-navy: #061D24;
+  --color-brand-info: #E3FAFB;
+  --color-brand-teal: #0F7C7A;
+  --color-brand-desc: #155361;
+
+  /* Brand shades */
+
+  --color-brand-teal-dark: #0B5F5D;
+  --color-brand-teal-light: #3DA6A2;
+  --color-brand-cyan: #12CBD8;
+
+
+  /* -------------------------
+     Text Colors
+     ------------------------- */
+
+  --color-text-strong: #08131A;
+  --color-text-body: #33474D;
+  --color-text-muted: #6B7F84;
+  --color-text-inverse: #F4FBFB;
+
+
+  /* -------------------------
+     Surfaces
+     ------------------------- */
+
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F5FAFA;
+  --color-surface-dark: var(--color-brand-navy);
+
+
+  /* -------------------------
+     Borders
+     ------------------------- */
+
+  --color-border: #DCE8E8;
+  --color-border-dark: rgba(255, 255, 255, 0.12);
+
+
+  /* -------------------------
+     Status Colors
+     ------------------------- */
+
+  --color-status-success: #1E8E5A;
+  --color-status-warning: #C98A1B;
+  --color-status-error: #C74B3F;
+
+
+  /* -------------------------
+     Typography
+     ------------------------- */
+
+  --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-body: "Poppins", sans-serif;
-}
-@theme {
+
+
+  /* -------------------------
+     Animation
+     ------------------------- */
+
   --animate-marquee: marquee 25s linear infinite;
 
   @keyframes marquee {
@@ -22,108 +85,278 @@
     }
   }
 }
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  font-family: var(--font-body);
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.5;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  /* FIX: force light only — this site has a fixed brand identity,
-     it should never flip to a dark palette based on OS/browser
-     preference. This single change is what was making your
-     backgrounds turn black. */
+  letter-spacing: 0.1px;
+
+  color: var(--color-text-body);
+  background: var(--color-surface);
+
   color-scheme: light;
-  color: var(--text);
-  background: var(--bg);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
+
+
+/* =========================================================
+   HTML
+   ========================================================= */
 
 html {
   scroll-behavior: smooth;
 }
 
-/* REMOVED: the @media (prefers-color-scheme: dark) block that
-   redefined --bg to #16171d and --text-h to #f3f4f6. That block
-   was the actual root cause of the black backgrounds and
-   invisible navy text — deleting it stops the flip entirely. */
+
+/* =========================================================
+   BODY
+   ========================================================= */
 
 body {
   margin: 0;
+  min-width: 320px;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: var(--color-text-body);
+  background: var(--color-surface);
 }
 
+
+/* =========================================================
+   ROOT APP CONTAINER
+   ========================================================= */
+
 #root {
-  /* FIX: was `width: 1126px; max-width: 100%; text-align: center;`
-     which caged the whole app (including your Solutions page) into
-     a fixed centered 1126px column with centered text. Your
-     Tailwind sections already handle their own max-width via
-     `max-w-6xl mx-auto`, so #root just needs to be full width. */
   width: 100%;
   min-height: 100svh;
+
   display: flex;
   flex-direction: column;
+
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
+/* =========================================================
+   BASE TYPOGRAPHY
+   Tailwind component classes can override these defaults
+   ========================================================= */
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+
+    font-family: var(--font-heading);
+
+    color: var(--color-text-strong);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.4px;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
     font-size: 36px;
-    margin: 20px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
+
+  h3 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  h4 {
     font-size: 20px;
+    font-weight: 600;
   }
-}
-p {
-  margin: 0;
+
+  h5 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  font-family: var(--font-body);
+
+  color: inherit;
+
+  text-decoration: none;
 }
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  font-family: var(--font-body);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   INPUTS / FORMS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   CODE
+   ========================================================= */
 
 code {
-  font-size: 15px;
-  line-height: 135%;
+  font-family: ui-monospace, Consolas, monospace;
+
+  display: inline-flex;
+
   padding: 4px 8px;
-  background: var(--code-bg);
+
+  border-radius: 4px;
+
+  font-size: 14px;
+  line-height: 1.35;
+
+  color: var(--color-text-strong);
+  background: var(--color-surface-alt);
+}
+
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+  h1 {
+    font-size: 42px;
+    letter-spacing: -1.2px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  h2 {
+    font-size: 28px;
+    letter-spacing: -0.6px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+}
+
+/* =========================================================
+   GLOBAL PAGE HERO
+   Every page hero uses the same height
+   ========================================================= */
+
+.page-hero {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .page-hero {
+    height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    height: 380px;
+  }
 }
