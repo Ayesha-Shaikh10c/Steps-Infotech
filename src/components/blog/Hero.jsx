@@ -52,10 +52,12 @@ const Hero = () => {
             lg:text-[44px]
           "
         >
-          Insights. Ideas.
-          <br />
+          {/* Insights. Ideas.
+          <br /> */}
 
           <span className="text-[#18aaa6]">
+            Insights. Ideas.
+          <br />
             Inspiration.
           </span>
         </h1>
