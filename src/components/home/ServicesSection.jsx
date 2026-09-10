@@ -144,51 +144,66 @@ export default function ServicesSection() {
             HEADER
         ====================================================== */}
 
-        <div className="text-center">
+        <div className="relative flex flex-col items-center text-center">
 
           {/* Company Logo */}
 
-          <div className="flex items-center justify-center">
-
-            <div className="flex items-center gap-4">
-
-              <div className="flex h-20 w-20 items-center justify-center">
-
-                {/* Replace with your actual Steps Infotech logo */}
-                <img
-                  src={logoWhite}
-                  alt="Steps Infotech"
-                  className="h-20 w-20 object-contain"
-                />
-
-              </div>
-
-              <div className="text-left">
-
-                <h1 className="text-5xl font-extrabold tracking-tight sm:text-6xl">
-                  STEPS
-                </h1>
-
-                <p className="-mt-1 text-2xl font-medium tracking-[0.25em] text-[#16dce8]">
-                  INFOTECH
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+          <img
+            src={logoWhite}
+            alt="Steps Infotech"
+            className="h-64 w-64 object-contain sm:h-72 sm:w-72"
+          />
 
 
-          {/* Tagline */}
+          {/* Tagline - centered directly below the logo */}
 
-          <p className="mx-auto mt-5 max-w-2xl text-lg font-semibold leading-7 text-white sm:text-xl">
+          <p className="mx-auto mt-10 max-w-2xl text-lg font-semibold leading-7 text-white sm:mt-12 sm:text-xl">
 
             Empowering careers with industry-focused internships
             <br className="hidden sm:block" />
             and future-ready skills.
 
           </p>
+
+
+          {/* ================= LEFT SIDE TEXT ================= */}
+
+          <div className="absolute left-0 top-1/2 hidden max-w-[260px] -translate-y-1/2 text-left xl:block">
+
+            <p className="text-base font-semibold uppercase tracking-[0.15em] text-[#12dce8]">
+              Since 2015
+            </p>
+
+            <p className="mt-2 text-xl font-bold leading-7 text-white">
+              A decade of shaping IT careers
+            </p>
+
+            <p className="mt-2 text-base leading-7 text-white/60">
+              Trusted by thousands of students to launch
+              their journey into the tech industry.
+            </p>
+
+          </div>
+
+
+          {/* ================= RIGHT SIDE TEXT ================= */}
+
+          <div className="absolute right-0 top-1/2 hidden max-w-[260px] -translate-y-1/2 text-right xl:block">
+
+            <p className="text-base font-semibold uppercase tracking-[0.15em] text-[#12dce8]">
+              Our Mission
+            </p>
+
+            <p className="mt-2 text-xl font-bold leading-7 text-white">
+              Bridging the gap between learning and industry
+            </p>
+
+            <p className="mt-2 text-base leading-7 text-white/60">
+              Real projects, real mentors and real
+              opportunities to grow.
+            </p>
+
+          </div>
 
 
           {/* Decorative Line */}

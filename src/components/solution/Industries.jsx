@@ -8,6 +8,7 @@ import {
   FaHotel,
   FaCity,
 } from "react-icons/fa6";
+import SectionHeading from "../ui/SectionHeading";
 
 const INDUSTRIES = [
   { icon: FaHeartPulse, label: "Healthcare" },
@@ -24,15 +25,13 @@ export default function Industries() {
   return (
     <section className="bg-white font-body">
       <div className="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-20">
-        <div className="text-center max-w-xl mx-auto mb-4">
-          <span className="text-brand-teal font-semibold tracking-widest text-xs md:text-sm">
-            INDUSTRIES WE SERVE
-          </span>
-          <h2 className="font-heading text-brand-navy text-2xl md:text-4xl mt-2">
-            Solutions Across Diverse Industries
-          </h2>
-        </div>
-        <div className="w-16 h-0.5 bg-brand-teal mx-auto mb-12" />
+        <SectionHeading
+          eyebrow="Industries We Serve"
+          title="Solutions Across Diverse Industries"
+          align="center"
+          divider
+          className="mb-12"
+        />
 
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8">
           {INDUSTRIES.map(({ icon: Icon, label }) => (
