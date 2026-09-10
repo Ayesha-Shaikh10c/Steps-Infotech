@@ -10,6 +10,9 @@ import {
   Quote,
 } from "lucide-react";
 
+import Button from "../button/button";
+
+
 /* =========================================================
    BRAND LOGO SVGS (inline, no external dependency needed)
 ========================================================= */
