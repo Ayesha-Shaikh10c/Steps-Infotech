@@ -23,6 +23,7 @@ function Navbar() {
     { name: "Services", path: "/services" },
     { name: "Solutions", path: "/solutions" },
     { name: "Technologies", path: "/technologies" },
+    { name: "Testimonials", path: "/testimonials" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Careers", path: "/careers" },
     { name: "Blog", path: "/blog" },

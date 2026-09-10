@@ -1,7 +1,10 @@
 import { FaReact, FaPython, FaJava, FaAws, FaDocker, FaNodeJs, FaMicrosoft } from "react-icons/fa6";
 import { SiAngular, SiMysql, SiPostgresql } from "react-icons/si";
+import SectionHeading from "../ui/SectionHeading";
 
 const TECHS = [
+  // These keep their real brand colors on purpose (React blue, Angular
+  // red, etc.) — recognizable tech logos should stay recognizable.
   { icon: FaReact, label: "React", color: "#61DAFB" },
   { icon: SiAngular, label: "Angular", color: "#DD0031" },
   { icon: FaNodeJs, label: "Node.js", color: "#5FA04E" },
@@ -17,15 +20,13 @@ const TECHS = [
 export default function Technologies() {
   return (
     <section className="max-w-6xl mx-auto px-6 md:px-8 py-16 md:py-20 font-body">
-      <div className="text-center max-w-xl mx-auto mb-4">
-        <span className="text-brand-teal font-semibold tracking-widest text-xs md:text-sm">
-          TECHNOLOGIES WE USE
-        </span>
-        <h2 className="font-heading text-brand-navy text-2xl md:text-4xl mt-2">
-          Built With The Best Technologies
-        </h2>
-      </div>
-      <div className="w-16 h-0.5 bg-brand-teal mx-auto mb-12" />
+      <SectionHeading
+        eyebrow="Technologies We Use"
+        title="Built With The Best Technologies"
+        align="center"
+        divider
+        className="mb-12"
+      />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {TECHS.map(({ icon: Icon, label, color }) => (

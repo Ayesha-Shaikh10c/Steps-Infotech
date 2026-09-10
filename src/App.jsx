@@ -5,19 +5,16 @@ import Home from "./pages/home/home";
 import Solutions from "./pages/solution/solutions";
 import SolutionDetail from "./pages/solution/SolutionDetail";
 import Technologies from "./pages/technologies/technologies";
-// Uncomment each import below as that team member finishes their page.
 import About from "./pages/about/about";
 import Services from "./pages/services/services";
-// import Technologies from "./pages/technologies/technologies";
-// import Portfolio from "./pages/portfolio/portfolio";
-// import Services from "./pages/services/services";
-
 import Portfolio from "./pages/portfolio/portfolio";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 import Testimonials from "./pages/testimonials/testimonials";
-// import Careers from "./pages/careers/careers";
+import Careers from "./pages/careers/careers";
+import JobApplication from "./components/careers/InsidePages/JobApplication/JobApplication";
 import Blog from "./pages/blog/blog";
 import ArticleDetails from "./components/blog/ArticleDetails";
+import Contact from "./pages/contact/contact";
 
 // NOTE: every route below is nested INSIDE the Layout route.
 // That's what makes Navbar + Footer "universal" — React Router
@@ -38,6 +35,8 @@ import ArticleDetails from "./components/blog/ArticleDetails";
 //
 // If you put a second <BrowserRouter> here too, you get:
 // "You cannot render a <Router> inside another <Router>"
+
+
 export default function App() {
   return (
     <Routes>
@@ -46,25 +45,16 @@ export default function App() {
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/solutions/:slug" element={<SolutionDetail />} />
         {<Route path="/technologies" element={<Technologies />} />}
-        {/*
-          JSX doesn't support // comments inside markup — the "<"
-          always starts a new tag no matter what's before it.
-          You MUST wrap commented-out JSX in { / * ... * / } like
-          this whole block. Uncomment one <Route> line at a time
-          as each page gets built, matching the import above.
-        */}
         <Route path="/about" element={<About />} /> 
         <Route path="/services" element={<Services />} /> 
-        {/* <Route path="/technologies" element={<Technologies />} /> */}
-        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
-        {/* <Route path="/services" element={<Services />} /> */}
-       
         <Route path="/portfolio" element={<Portfolio />} /> 
         {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
         <Route path="/testimonials" element={<Testimonials />} /> 
-        {/* <Route path="/careers" element={<Careers />} /> */}
-        { <Route path="/blog" element={<Blog />} /> }
-        { <Route path="/article/:id" element={<ArticleDetails />}/>}
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/job-application" element={<JobApplication />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/article/:id" element={<ArticleDetails />}/>
+        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   );
