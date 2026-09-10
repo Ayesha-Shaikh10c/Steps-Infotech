@@ -10,10 +10,14 @@ import {
   Quote,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 import Button from "../button/button";
 import officeImage from "../../assets/images/image1.png";
 
 const InternshipSection = () => {
+  const navigate = useNavigate();
+
   const stats = [
     {
       icon: BriefcaseBusiness,
@@ -92,7 +96,7 @@ const InternshipSection = () => {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3">
-              <Button>
+              <Button onClick={() => navigate("/careers")}>
                 Explore Internships
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
