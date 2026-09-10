@@ -1,36 +1,65 @@
-function WhoWeAre() {
+import { ArrowRight } from "lucide-react";
+
+export default function WhoWeAre() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="mx-auto max-w-[1024px] px-[20px] pt-[13px]">
 
-        <p className="text-sm font-semibold tracking-[3px] text-blue-600">
-          WHO WE ARE
-        </p>
+      <div className="grid grid-cols-[1.6fr_0.9fr] gap-[25px]">
 
-        <h2 className="text-3xl md:text-5xl font-bold mt-4">
-          Building Solutions. Building Careers.
-        </h2>
+        {/* LEFT */}
+        <div>
 
-        <p className="mt-6 text-gray-600 leading-8">
-          Steps Infotech is an innovative IT company delivering smart,
-          scalable and reliable solutions to businesses worldwide.
-          We also provide career opportunities to skilled and
-          passionate individuals across various technology domains.
-        </p>
+          <h2 className="text-[25px] font-normal leading-none text-[#36596b]">
+            Who we are
+          </h2>
 
-        <p className="mt-4 text-gray-600 leading-8">
-          Our client-centric approach, transparent communication and
-          commitment to excellence have helped us build long-term
-          relationships and deliver measurable results.
-        </p>
+          <h3 className="mt-[5px] text-[23px] font-extrabold leading-none text-[#29445e]">
+            Building Solutions. Building Careers.
+          </h3>
 
-        <button className="mt-8 border border-black px-7 py-3 rounded-md hover:bg-black hover:text-white transition">
-          Let's Know More About Us
-        </button>
+          <div className="mt-[9px] text-[16px] font-medium leading-[1.47] text-black">
+
+            <p>
+              steps infotech is an innovative It company delivering smart,
+              scalable and reliable solutions to business worldwide. we also
+              provide career opportunities to skilled and passionate
+              individuals across various technology domains
+            </p>
+
+            <p className="mt-[0px]">
+              our clients-centric approach,transparent communication and
+              commitment to excellence to have helped us build long-term
+              relationship and deliver measurable results.
+            </p>
+
+          </div>
+
+          <button className="mt-[12px] flex items-center gap-[10px] rounded-[12px] bg-[#195762] px-[17px] py-[8px] text-[16px] font-bold text-white">
+
+            lets know more about us
+
+            <ArrowRight
+              size={22}
+              strokeWidth={3}
+            />
+
+          </button>
+
+        </div>
+
+        {/* RIGHT */}
+        <div className="pt-[0px]">
+
+          <img
+            src="/images/about-building.png"
+            alt="Steps Infotech building"
+            className="h-[252px] w-full rounded-[27px] object-cover shadow-[0_7px_3px_rgba(0,0,0,0.3)]"
+          />
+
+        </div>
 
       </div>
+
     </section>
   );
 }
-
-export default WhoWeAre;

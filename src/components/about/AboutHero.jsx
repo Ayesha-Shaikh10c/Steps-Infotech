@@ -1,4 +1,6 @@
-function AboutHero() {
+import { ArrowRight } from "lucide-react";
+
+export default function AboutHero() {
   return (
     <section className="page-hero relative flex items-center overflow-hidden bg-gray-50">
       <div className="mx-auto w-full max-w-7xl px-6 text-center md:px-16">
@@ -23,5 +25,3 @@ function AboutHero() {
     </section>
   );
 }
-
-export default AboutHero;

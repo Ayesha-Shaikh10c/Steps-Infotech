@@ -1,52 +1,83 @@
-function Stats() {
+import {
+  CalendarDays,
+  Users,
+  BriefcaseBusiness,
+  UserRound,
+  Building2,
+} from "lucide-react";
 
-  const stats = [
-    {
-      number: "10+",
-      title: "Years of Excellence",
-    },
-    {
-      number: "150+",
-      title: "Happy Clients",
-    },
-    {
-      number: "250+",
-      title: "Projects Delivered",
-    },
-    {
-      number: "50+",
-      title: "Expert Professionals",
-    },
-    {
-      number: "10+",
-      title: "Industries Served",
-    },
-  ];
+const stats = [
+  {
+    number: "10+",
+    text: "years of excellence",
+    icon: CalendarDays,
+  },
+  {
+    number: "150+",
+    text: "happy clients",
+    icon: Users,
+  },
+  {
+    number: "250+",
+    text: "project delivered",
+    icon: BriefcaseBusiness,
+  },
+  {
+    number: "50+",
+    text: "expert professionals",
+    icon: Users,
+  },
+  {
+    number: "10+",
+    text: "industry served",
+    icon: Building2,
+  },
+];
 
+export default function Stats() {
   return (
-    <section className="bg-gray-50 py-16 px-6">
+    <section className="mx-auto max-w-[1024px] px-[13px] pt-[17px]">
 
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="flex h-[109px] items-center rounded-[27px] bg-[#a9f5f4] px-[8px] shadow-[0_7px_3px_rgba(0,0,0,0.3)]">
 
-        {stats.map((stat) => (
-          <div
-            key={stat.title}
-            className="bg-white rounded-xl p-8 text-center shadow-sm"
-          >
-            <h2 className="text-4xl font-bold text-blue-600">
-              {stat.number}
-            </h2>
+        {stats.map((item, index) => {
 
-            <p className="mt-3 text-gray-600">
-              {stat.title}
-            </p>
-          </div>
-        ))}
+          const Icon = item.icon;
+
+          return (
+            <div
+              key={item.text}
+              className={`flex h-[52px] flex-1 items-center justify-center gap-[8px] ${
+                index !== 4
+                  ? "border-r border-[#4c8586]"
+                  : ""
+              }`}
+            >
+
+              <Icon
+                size={34}
+                strokeWidth={1.4}
+                className="text-[#298d91]"
+              />
+
+              <div className="leading-none">
+
+                <div className="text-[16px] font-normal text-[#075d68]">
+                  {item.number}
+                </div>
+
+                <div className="mt-[7px] whitespace-nowrap text-[14px] font-medium">
+                  {item.text}
+                </div>
+
+              </div>
+
+            </div>
+          );
+        })}
 
       </div>
 
     </section>
   );
 }
-
-export default Stats;
