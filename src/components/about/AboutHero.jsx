@@ -1,25 +1,53 @@
-function AboutHero() {
+import { ArrowRight } from "lucide-react";
+
+export default function AboutHero() {
   return (
-    <section className="bg-gray-50 py-24 px-6 text-center">
-      <p className="text-sm font-semibold tracking-[4px] text-blue-600">
-        ABOUT
-      </p>
+    <section className="px-0">
 
-      <h1 className="text-4xl md:text-6xl font-bold mt-5">
-        STEPS INFOTECH
-      </h1>
+      <div className="relative mx-auto h-[243px] max-w-[1024px] overflow-hidden rounded-b-[27px] shadow-[0_6px_3px_rgba(0,0,0,0.3)]">
 
-      <p className="max-w-2xl mx-auto mt-6 text-gray-600 text-lg leading-8">
-        We are a technology-driven company that builds innovative
-        digital solutions and connects talent with opportunities
-        across multiple domains.
-      </p>
+        {/* Background */}
+        <img
+          src="/images/about-hero.png"
+          alt="Steps Infotech"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
-      <button className="mt-8 bg-black text-white px-7 py-3 rounded-md hover:bg-blue-600 transition">
-        Join Our Team
-      </button>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-[#006875]/75" />
+
+        {/* Content */}
+        <div className="relative z-10 px-[35px] pt-[10px] text-white">
+
+          <h1 className="text-[23px] font-normal leading-[1.45]">
+            ABOUT
+            <br />
+            STEPS INFOTECH
+          </h1>
+
+          <p className="mt-[26px] max-w-[385px] text-[15px] font-normal leading-[1.75]">
+            we are a technology - driven company that
+            <br />
+            builds innovatives digital solutions and connects
+            <br />
+            talent with opportunities across multiple domains.
+          </p>
+
+          <button className="mt-[11px] flex items-center gap-[10px] rounded-[13px] bg-[#11aeca] px-[17px] py-[7px] text-[16px] font-bold shadow-sm">
+
+            join our team
+
+            <ArrowRight
+              size={23}
+              strokeWidth={3}
+            />
+
+          </button>
+
+        </div>
+
+      </div>
+
     </section>
   );
 }
-
-export default AboutHero;
