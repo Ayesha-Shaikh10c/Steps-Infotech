@@ -1,27 +1,174 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function AboutHero() {
   return (
-    <section className="page-hero relative flex items-center overflow-hidden bg-gray-50">
-      <div className="mx-auto w-full max-w-7xl px-6 text-center md:px-16">
-        <p className="font-body text-sm font-semibold tracking-[4px] text-[#079c9c]">
-          ABOUT
-        </p>
+    <section className="px-0">
 
-        <h1 className="mt-5 font-heading text-4xl font-bold text-[#08131A] md:text-5xl lg:text-6xl">
-          STEPS INFOTECH
-        </h1>
+      {/* ================= BANNER ================= */}
 
-        <p className="mx-auto mt-6 max-w-2xl font-body text-base leading-8 text-gray-600 md:text-lg">
-          We are a technology-driven company that builds innovative
-          digital solutions and connects talent with opportunities
-          across multiple domains.
-        </p>
+      <div
+        className="
+          relative
+          mx-auto
+          w-full
+          max-w-[1024px]
+          overflow-hidden
+          rounded-[27px]
+          shadow-[0_6px_12px_rgba(0,0,0,0.25)]
+        "
+      >
 
-        <button className="mt-8 rounded-md bg-[#079c9c] px-7 py-3 font-body text-sm font-semibold text-white transition hover:bg-[#067c7e]">
-          Join Our Team
-        </button>
+        {/* ================= BACKGROUND IMAGE ================= */}
+
+        <img
+          src="/src/assets/about-banner.png"
+          alt="Steps Infotech"
+          className="block h-auto w-full"
+        />
+
+
+        {/* ================= TEXT ================= */}
+
+        <div
+          className="
+            absolute
+            left-0
+            top-0
+            z-10
+            flex
+            h-full
+            w-[52%]
+            flex-col
+            justify-center
+            px-[35px]
+          "
+        >
+
+          {/* ================= ABOUT ================= */}
+
+          <p
+            className="
+              text-[18px]
+              font-extrabold
+              uppercase
+              tracking-[5px]
+              text-[#07858a]
+              drop-shadow-[0_1px_2px_rgba(255,255,255,0.95)]
+              md:text-[20px]
+            "
+          >
+            ABOUT
+          </p>
+
+
+          {/* ================= TITLE ================= */}
+
+          <h1
+            className="
+              mt-[2px]
+              text-[34px]
+              font-extrabold
+              uppercase
+              leading-[1.05]
+              tracking-[-0.5px]
+              md:text-[40px]
+            "
+          >
+            <span
+              className="
+                text-[#123f55]
+                drop-shadow-[0_2px_2px_rgba(255,255,255,0.95)]
+              "
+            >
+              STEPS
+            </span>
+
+            {" "}
+
+            <span
+              className="
+                text-[#087f84]
+                drop-shadow-[0_2px_2px_rgba(255,255,255,0.95)]
+              "
+            >
+              INFOTECH
+            </span>
+          </h1>
+
+
+          {/* ================= DESCRIPTION ================= */}
+
+          <p
+            className="
+              mt-[18px]
+              max-w-[400px]
+              text-[15px]
+              font-bold
+              leading-[1.65]
+              text-[#173f55]
+              drop-shadow-[0_1px_2px_rgba(255,255,255,1)]
+              md:text-[16px]
+            "
+          >
+            <span>We are a </span>
+
+            <span className="text-[#075e63]">
+              technology-driven
+            </span>
+
+            <span> company that </span>
+
+            <span className="text-[#075e63]">
+              builds innovative digital solutions
+            </span>
+
+            <span> and </span>
+
+            <span className="text-[#075e63]">
+              connects talent
+            </span>
+
+            <span> with opportunities across multiple domains.</span>
+          </p>
+
+
+          {/* ================= JOIN OUR TEAM ================= */}
+
+          <Link
+            to="/careers"
+            className="
+              mt-[18px]
+              flex
+              w-fit
+              items-center
+              gap-[10px]
+              rounded-[13px]
+              bg-[#159da0]
+              px-[19px]
+              py-[8px]
+              text-[16px]
+              font-bold
+              text-white
+              shadow-[0_4px_10px_rgba(21,157,160,0.25)]
+              transition-all
+              duration-300
+              hover:bg-[#117f82]
+              hover:shadow-[0_6px_15px_rgba(21,157,160,0.35)]
+            "
+          >
+            Join our team
+
+            <ArrowRight
+              size={23}
+              strokeWidth={3}
+            />
+          </Link>
+
+        </div>
+
       </div>
+
     </section>
   );
 }
