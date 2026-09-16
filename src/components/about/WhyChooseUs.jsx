@@ -1,120 +1,183 @@
+import React from "react";
 import {
   Lightbulb,
   Headphones,
-  ChartNoAxesCombined,
+  BarChart3,
   ArrowRight,
 } from "lucide-react";
 
-const reasons = [
-  {
-    title: "Innovative Solutions",
-    text: "We leverage the latest technologies and creative thinking to build future-ready solutions.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Dedicated Support",
-    text: "Our support team is always available to ensure smooth operations and client satisfaction.",
-    icon: Headphones,
-  },
-  {
-    title: "Results - Driven",
-    text: "We focus on delivering measurable outcomes that help businesses grow and succeed.",
-    icon: ChartNoAxesCombined,
-  },
-];
+import { Link } from "react-router-dom";
 
-function WhyChooseUs() {
+export default function WhyChooseUs() {
+  const items = [
+    {
+      title: "Innovative Solutions",
+      text:
+        "We leverage the latest technologies and creative thinking to build future-ready solutions.",
+      icon: Lightbulb,
+      link: "/solutions",
+    },
+
+    {
+      title: "Dedicated Support",
+      text:
+        "Our support team is always available to ensure smooth operations and client satisfaction.",
+      icon: Headphones,
+      link: "/services"
+    },
+
+    {
+      title: "Results - Driven",
+      text:
+        "We focus on delivering measurable outcomes that help businesses grow and succeed.",
+      icon: BarChart3,
+      link: "/portfolio",
+    },
+  ];
+
   return (
-    <section className="w-full bg-white px-4 pb-16 pt-4 md:px-8 md:pb-20">
+    <section className="mx-auto w-full max-w-[1260px] px-[40px] pt-[30px] pb-[40px]">
 
-      <div className="mx-auto max-w-[1024px]">
+      {/* ================= HEADING ================= */}
 
-        {/* SECTION HEADING */}
-        <div className="text-center">
-          <p className="text-[14px] font-bold tracking-[3px] text-[#269497]">
-            WHY CHOOSE US
-          </p>
+      <div className="text-center">
 
-          <h2 className="mt-2 text-[28px] font-extrabold text-[#173b4d] md:text-[32px]">
-            What Sets Us Apart
-          </h2>
+        <h2 className="text-[38px] font-bold text-[#173f55]">
+          What Sets Us Apart
+        </h2>
 
-          <div className="mx-auto mt-4 h-[3px] w-[65px] rounded-full bg-[#269497]" />
-        </div>
-
-        {/* CARDS */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-
-          {reasons.map((reason) => {
-            const Icon = reason.icon;
-
-            return (
-              <div
-                key={reason.title}
-                className="
-                  group
-                  rounded-[24px]
-                  border border-[#d9eeee]
-                  bg-white
-                  px-7 py-7
-                  shadow-[0_6px_18px_rgba(0,0,0,0.10)]
-                  transition duration-300
-                  hover:-translate-y-2
-                  hover:shadow-[0_14px_28px_rgba(0,0,0,0.15)]
-                "
-              >
-
-                {/* ICON */}
-                <div
-                  className="
-                    flex h-[60px] w-[60px]
-                    items-center justify-center
-                    rounded-2xl
-                    bg-[#a9f5f4]
-                    transition duration-300
-                    group-hover:bg-[#238e91]
-                  "
-                >
-                  <Icon
-                    size={30}
-                    strokeWidth={1.8}
-                    className="text-[#238e91] transition duration-300 group-hover:text-white"
-                  />
-                </div>
-
-                {/* TITLE */}
-                <h3 className="mt-6 text-[19px] font-bold text-[#173b4d]">
-                  {reason.title}
-                </h3>
-
-                {/* LINE */}
-                <div className="mt-3 h-[3px] w-[45px] rounded-full bg-[#269497]" />
-
-                {/* DESCRIPTION */}
-                <p className="mt-5 text-[14px] font-medium leading-[1.7] text-[#334b57]">
-                  {reason.text}
-                </p>
-
-                {/* ARROW */}
-                <div className="mt-6 flex items-center gap-2 text-[13px] font-bold text-[#238e91]">
-                  Learn more
-                  <ArrowRight
-                    size={17}
-                    strokeWidth={2.5}
-                    className="transition-transform duration-300 group-hover:translate-x-1"
-                  />
-                </div>
-
-              </div>
-            );
-          })}
-          
-
-        </div>
+        <div className="mx-auto mt-[20px] h-[4px] w-[80px] rounded-full bg-[#31979a]" />
 
       </div>
+
+
+      {/* ================= CARDS ================= */}
+
+      <div className="mt-[50px] grid grid-cols-1 gap-[30px] md:grid-cols-3">
+
+        {items.map((item) => {
+
+          const Icon = item.icon;
+
+          return (
+            <div
+              key={item.title}
+              className="
+                group
+                min-h-[395px]
+                rounded-[28px]
+                border
+                border-[#dce8e8]
+                bg-white
+                px-[35px]
+                py-[36px]
+
+                shadow-[0_8px_20px_rgba(0,0,0,0.08)]
+
+                transition-all
+                duration-300
+                ease-out
+
+                hover:-translate-y-[10px]
+                hover:scale-[1.02]
+                hover:border-[#a8f3f3]
+                hover:shadow-[0_18px_35px_rgba(0,0,0,0.16)]
+              "
+            >
+
+              {/* ================= ICON ================= */}
+
+              <div
+                className="
+                  flex
+                  h-[76px]
+                  w-[76px]
+                  items-center
+                  justify-center
+                  rounded-[17px]
+                  bg-[#a8f3f3]
+
+                  transition-all
+                  duration-300
+
+                  group-hover:scale-110
+                "
+              >
+                <Icon
+                  size={38}
+                  strokeWidth={1.8}
+                  className="text-[#299294]"
+                />
+              </div>
+
+
+              {/* ================= TITLE ================= */}
+
+              <h3 className="mt-[31px] text-[24px] font-bold text-[#173f55]">
+                {item.title}
+              </h3>
+
+
+              {/* ================= LINE ================= */}
+
+              <div
+                className="
+                  mt-[13px]
+                  h-[3px]
+                  w-[56px]
+                  rounded-full
+                  bg-[#31979a]
+
+                  transition-all
+                  duration-300
+
+                  group-hover:w-[70px]
+                "
+              />
+
+
+              {/* ================= DESCRIPTION ================= */}
+
+              <p className="mt-[27px] text-[18px] leading-[1.65] text-[#344957]">
+                {item.text}
+              </p>
+
+
+              {/* ================= LEARN MORE ================= */}
+
+              <Link
+                to={item.link}
+                className="
+                  mt-[30px]
+                  inline-flex
+                  items-center
+                  gap-[12px]
+
+                  text-[17px]
+                  font-bold
+                  text-[#298d91]
+
+                  transition-all
+                  duration-300
+
+                  hover:gap-[17px]
+                  hover:text-[#176e74]
+                "
+              >
+                Learn more
+
+                <ArrowRight
+                  size={21}
+                  strokeWidth={2.5}
+                />
+              </Link>
+
+            </div>
+          );
+        })}
+
+      </div>
+
     </section>
   );
 }
-
-export default WhyChooseUs;

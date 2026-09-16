@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import aboutBuilding from "../../assets/about-building.png";
 
 function WhoWeAre() {
@@ -29,17 +30,18 @@ function WhoWeAre() {
             relationship and deliver measurable results.
           </p>
 
-          <button
-            type="button"
-            className="mt-5 flex items-center gap-2 rounded-xl bg-[#195762] px-5 py-2.5 text-sm font-bold text-white transition duration-300 hover:bg-[#124852]"
+          {/* ROUTING BUTTON */}
+          <Link
+            to="/portfolio"
+            className="mt-5 flex w-fit items-center gap-2 rounded-xl bg-[#159da0] px-5 py-2.5 text-sm font-bold text-white transition duration-300 hover:bg-[#117f82]"
           >
-            lets know more about us
+            let's know more about us
 
             <ArrowRight
               size={20}
               strokeWidth={3}
             />
-          </button>
+          </Link>
         </div>
 
         {/* RIGHT BUILDING IMAGE */}
