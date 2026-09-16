@@ -1,15 +1,16 @@
+import React from "react";
 import servicesHero from "../../assets/images/image1.png";
 
 const Hero = () => {
   return (
     <section
-      className="page-hero relative flex items-center overflow-hidden bg-cover bg-center"
+      className="page-hero relative flex min-h-[450px] items-center overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: `url(${servicesHero})`,
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-[#002633]/40" />
+      <div className="absolute inset-0 bg-[#002633]/40"></div>
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-16">
