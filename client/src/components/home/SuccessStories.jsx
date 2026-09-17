@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Award,
   ArrowRight,
   Quote,
   Star,
@@ -364,8 +363,6 @@ export default function SuccessStories() {
 
         </div>
 
-
-        
       </div>
 
     </section>
