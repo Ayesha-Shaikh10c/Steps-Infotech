@@ -293,40 +293,14 @@ const InternshipSection = () => {
           {/* RIGHT IMAGE */}
           <div className="flex items-center justify-center lg:justify-end">
             <img
-              src={"assets/images/image1"}
+              src={"src/assets/images/image1.png"}
               alt="Steps Infotech Office"
               className="h-[250px] w-auto max-w-full object-contain sm:h-[290px] md:h-[330px] lg:h-[370px] xl:h-[400px]"
             />
           </div>
         </div>
 
-        {/* BOTTOM INFORMATION */}
-        <div className="hidden border-t border-white/10 py-4 lg:block">
-          <div className="grid grid-cols-2 gap-4 xl:grid-cols-4">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-
-              return (
-                <div
-                  key={index}
-                  className="flex items-center gap-3 border-r border-white/10 last:border-r-0"
-                >
-                  <Icon className="h-5 w-5 shrink-0 !text-brand-cyan" />
-
-                  <div>
-                    <p className="font-heading text-lg font-semibold !text-white">
-                      {stat.number}
-                    </p>
-
-                    <p className="text-xs !text-white/70">
-                      {stat.title} {stat.subtitle}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+       
       </div>
     </section>
   );

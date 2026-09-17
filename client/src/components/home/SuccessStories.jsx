@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Award,
   ArrowRight,
   Quote,
   Star,
@@ -361,76 +360,6 @@ export default function SuccessStories() {
           <p className="text-lg text-gray-300">
             Your journey could be the next success story we celebrate.
           </p>
-
-        </div>
-
-
-        {/* =====================================================
-            CTA BANNER
-        ====================================================== */}
-
-        <div className="mt-10 flex flex-col items-center justify-between gap-6 rounded-2xl bg-[#12cbd8] px-6 py-7 shadow-xl sm:px-8 md:flex-row md:px-10">
-
-          {/* CTA CONTENT */}
-
-          <div className="flex items-center gap-4 text-left">
-
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/20">
-
-              <Award
-                className="h-8 w-8 text-gray-900"
-                strokeWidth={2}
-              />
-
-            </div>
-
-
-            <div>
-
-              <h3 className="text-xl font-extrabold text-gray-900 sm:text-2xl">
-                Ready to Start Your Journey?
-              </h3>
-
-              <p className="mt-1 text-sm leading-6 text-gray-900 sm:text-base">
-                Join Steps Infotech and take the first step towards a
-                successful IT career.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          {/* CTA BUTTON */}
-
-          <button
-            className="
-              flex
-              shrink-0
-              items-center
-              gap-2
-              rounded-full
-              bg-white
-              px-6
-              py-3
-              font-semibold
-              text-[#0798a5]
-              shadow-md
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:bg-gray-100
-              active:scale-95
-            "
-          >
-
-            <span>
-              Apply for Internship
-            </span>
-
-            <ArrowRight className="h-4 w-4" />
-
-          </button>
 
         </div>
 
