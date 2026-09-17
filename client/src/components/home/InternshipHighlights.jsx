@@ -138,14 +138,7 @@ export default function InternshipHighlights() {
               })}
             </div>
 
-            <Button
-              variant="accent"
-              size="lg"
-              icon={<ArrowRight className="h-6 w-6" />}
-              className="mt-5 w-full !rounded-xl !text-white text-xl sm:text-2xl"
-            >
-              Apply Now
-            </Button>
+           
           </div>
         </div>
 
