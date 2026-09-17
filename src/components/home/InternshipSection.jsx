@@ -289,7 +289,7 @@ const InternshipSection = () => {
           {/* RIGHT IMAGE */}
           <div className="flex items-center justify-center lg:justify-end">
             <img
-              src={officeImage}
+              src={"assets/images/image1"}
               alt="Steps Infotech Office"
               className="h-[250px] w-auto max-w-full object-contain sm:h-[290px] md:h-[330px] lg:h-[370px] xl:h-[400px]"
             />
