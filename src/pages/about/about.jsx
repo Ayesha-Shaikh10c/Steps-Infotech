@@ -5,6 +5,7 @@ import MissionVision from "../../components/about/MissionVision";
 import Values from "../../components/about/Values";
 import WhyChooseUs from "../../components/about/WhyChooseUs";
 
+
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <MissionVision />
       <Values />
       <WhyChooseUs />
+     
     </>
   );
 }
