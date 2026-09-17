@@ -299,10 +299,6 @@ export default function InternshipHighlights() {
 
             </div>
 
-<<<<<<< HEAD
-           
-=======
->>>>>>> a5e84d615f3d19c83927d59d5c16532db6ada4a6
           </div>
 
         </div>

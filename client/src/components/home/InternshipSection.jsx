@@ -299,8 +299,6 @@ const InternshipSection = () => {
             />
           </div>
         </div>
-
-       
       </div>
     </section>
   );
