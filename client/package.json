@@ -14,6 +14,10 @@
     "@tailwindcss/vite": "^4.3.3",
     "axios": "^1.18.1",
     "bootstrap": "^5.3.8",
+<<<<<<< HEAD
+=======
+    "cors": "^2.8.6",
+>>>>>>> 7de9184248b56b763c66e0cbcf7c2e6f3b01fd7d
     "jspdf": "^4.2.1",
     "lucide-react": "^1.41.0",
     "react": "^19.2.7",
@@ -30,6 +34,6 @@
     "@vitejs/plugin-react": "^6.0.3",
     "babel-plugin-react-compiler": "^1.0.0",
     "oxlint": "^1.71.0",
-    "vite": "^8.1.1"
+    "vite": "^8.3.0"
   }
 }
