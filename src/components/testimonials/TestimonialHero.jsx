@@ -11,7 +11,7 @@ const TestimonialHero = () => {
         items-center
       "
       style={{
-        backgroundImage: `url(${testHero})`,
+        backgroundImage:"c:\Users\Dayyan Kazi\Downloads_F_198271219_7q1Y1eqrCzImyc8SCudpcC2LNW3pW9uT.jpg", 
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
