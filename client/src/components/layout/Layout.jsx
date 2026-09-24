@@ -1,21 +1,24 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
+import Chatbot from "../chatbot/chatbot";
 
-// This is the ONE place Navbar and Footer get rendered.
-// Every page in the site is wrapped by this automatically once
-// it's registered as a nested route under Layout in App.jsx.
-// Individual page components (Home, About, Solutions, etc.)
-// should NOT import Navbar or Footer themselves — just build
-// the page's own content and export it.
+// This is the ONE place Navbar, Footer and Chatbot get rendered.
+// Every page is automatically wrapped by Layout.
 export default function Layout() {
   return (
     <div className="w-full">
       <Navbar />
+
       <main>
         <Outlet />
       </main>
-      <Footer />
+
+      <div id="site-footer">
+        <Footer />
+      </div>
+
+      <Chatbot />
     </div>
   );
 }
