@@ -1,121 +1,62 @@
 import React from "react";
+import { FaStar, FaRegStar } from "react-icons/fa6";
 
-const Rating = () => {
+const testimonial = {
+  quote:
+    "The team delivered an exceptional solution that transformed our business operations. Their expertise, communication, and commitment to quality are outstanding.",
+  author: "XYZ",
+  role: "CEO",
+  rating: 4.0,
+  outOf: 5,
+};
+
+function Rating() {
+  const fullStars = Math.round(testimonial.rating);
+
   return (
-    <section
-      style={{
-        width: "100%",
-        padding: "0 7% 40px",
-        boxSizing: "border-box",
-        backgroundColor: "#ffffff",
-      }}
-    >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          minHeight: "130px",
-          margin: "0 auto",
-          padding: "25px 40px",
-          backgroundColor: "#b5d8d9",
-          boxSizing: "border-box",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "40px",
-        }}
-      >
-        {/* LEFT SIDE - QUOTE */}
-        <div
-          style={{
-            flex: 1,
-            display: "flex",
-            alignItems: "flex-start",
-            gap: "20px",
-          }}
-        >
-          {/* Quote Icon */}
-          <div
-            style={{
-              fontSize: "52px",
-              lineHeight: "0.8",
-              fontWeight: "700",
-              color: "#0877b9",
-            }}
-          >
-            “
+    <section className="mx-auto mt-[70px] max-w-6xl bg-brand-info px-8 py-11 sm:px-14">
+      <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-center sm:justify-between">
+        {/* Testimonial */}
+        <div className="max-w-2xl">
+          <div className="mb-5 font-heading text-5xl leading-none text-brand-teal">
+            &ldquo;
           </div>
 
-          {/* Testimonial */}
-          <div>
-            <p
-              style={{
-                margin: "0 0 8px",
-                fontSize: "15px",
-                lineHeight: "1.5",
-                color: "#111111",
-                maxWidth: "520px",
-              }}
-            >
-              The team delivered an exceptional solution that transformed
-              our business operations. Their expertise, communication,
-              and commitment to quality are outstanding.
-            </p>
+          <p className="mb-4 font-body text-lg leading-relaxed text-brand-navy">
+            {testimonial.quote}
+          </p>
 
-            <p
-              style={{
-                margin: "0",
-                fontSize: "14px",
-                color: "#222222",
-              }}
-            >
-              -XYZ
-            </p>
-
-            <p
-              style={{
-                margin: "2px 0 0",
-                fontSize: "13px",
-                color: "#333333",
-              }}
-            >
-              CEO
-            </p>
-          </div>
+          <p className="font-body text-sm text-brand-navy">
+            — {testimonial.author}
+          </p>
+          <p className="mt-1 font-body text-sm text-brand-desc">
+            {testimonial.role}
+          </p>
         </div>
 
-        {/* RIGHT SIDE - RATING */}
-        <div
-          style={{
-            minWidth: "150px",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "34px",
-              fontWeight: "400",
-              color: "#111111",
-              marginBottom: "5px",
-            }}
-          >
-            4.0
+        {/* Rating */}
+        <div className="min-w-[170px] text-center">
+          <h2 className="mb-2 font-heading text-5xl text-brand-navy">
+            {testimonial.rating.toFixed(1)}
+          </h2>
+
+          <div className="flex justify-center gap-1 text-2xl">
+            {Array.from({ length: testimonial.outOf }).map((_, i) =>
+              i < fullStars ? (
+                <FaStar key={i} className="text-yellow-400" />
+              ) : (
+                <FaRegStar key={i} className="text-brand-desc/40" />
+              )
+            )}
           </div>
 
-          <div
-            style={{
-              fontSize: "25px",
-              letterSpacing: "3px",
-              color: "#f2c400",
-            }}
-          >
-            ★★★★
-            <span style={{ color: "#ffffff" }}>★</span>
-          </div>
+          <p className="mt-3 font-body text-sm text-brand-desc">
+            Client satisfaction
+          </p>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Rating;

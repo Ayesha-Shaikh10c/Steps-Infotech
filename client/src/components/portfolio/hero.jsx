@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import portfolioImage from "../../assets/images/portfolio.png";
 
 const Hero = () => {
@@ -164,9 +165,11 @@ const Hero = () => {
             }}
           >
             {/* View Case Studies Button */}
-            <button
+            <Link
+              to="/case-studies"
               className="font-body"
               style={{
+                display: "inline-block",
                 padding: "14px 25px",
                 backgroundColor: "#20aeb5",
                 color: "#ffffff",
@@ -174,6 +177,7 @@ const Hero = () => {
                 borderRadius: "7px",
                 fontSize: "15px",
                 fontWeight: "600",
+                textDecoration: "none",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -190,12 +194,14 @@ const Hero = () => {
               }}
             >
               View Case Studies →
-            </button>
+            </Link>
 
             {/* Start Your Project Button */}
-            <button
+            <Link
+              to="/contact"
               className="font-body"
               style={{
+                display: "inline-block",
                 padding: "14px 25px",
                 backgroundColor: "transparent",
                 color: "#ffffff",
@@ -203,6 +209,7 @@ const Hero = () => {
                 borderRadius: "7px",
                 fontSize: "15px",
                 fontWeight: "600",
+                textDecoration: "none",
                 cursor: "pointer",
                 transition: "all 0.3s ease",
               }}
@@ -219,7 +226,7 @@ const Hero = () => {
               }}
             >
               Start Your Project →
-            </button>
+            </Link>
           </div>
         </div>
 

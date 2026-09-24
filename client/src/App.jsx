@@ -9,6 +9,7 @@ import Technologies from "./pages/technologies/technologies";
 import About from "./pages/about/about";
 import Services from "./pages/services/services";
 import Portfolio from "./pages/portfolio/portfolio";
+import CaseStudies from "./pages/case-studies/caseStudies";
 // import PartnersClient from "./pages/PartnersClient/partners&client";
 import Testimonials from "./pages/testimonials/testimonials";
 import Careers from "./pages/careers/careers";
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/careers" element={<Careers />} />
