@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
+import ScrollToTop from "./components/about/ScrollToTop";
 
 import Home from "./pages/home/home";
 import Solutions from "./pages/solution/solutions";
@@ -32,7 +33,6 @@ import SavedJobs from "./pages/User/SavedJobs";
 import MyApplications from "./pages/User/MyApplications";
 import ApplicationDetails from "./pages/User/ApplicationDetails";
 
-
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import ManageUsers from "./pages/Admin/ManageUsers";
 import ManageJobs from "./pages/Admin/ManageJobs";
@@ -46,83 +46,158 @@ import ManagePortfolio from "./pages/Admin/ManagePortfolio";
 import ManageTechnologies from "./pages/Admin/ManageTechnologies";
 import ManagePartners from "./pages/Admin/ManagePartners";
 
-// NOTE: every route below is nested INSIDE the Layout route.
-// That's what makes Navbar + Footer "universal" — React Router
-// renders Layout once, and swaps only the <Outlet /> content
-// (the actual page) as the URL changes. Navbar/Footer never
-// re-mount between page navigations.
-//
-// IMPORTANT: <BrowserRouter> is NOT here. There must be exactly
-// ONE <BrowserRouter> in the whole app, and it belongs in
-// main.jsx wrapping <App />, like this:
-//
-//   import { BrowserRouter } from "react-router-dom";
-//   ReactDOM.createRoot(document.getElementById("root")).render(
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   );
-//
-// If you put a second <BrowserRouter> here too, you get:
-// "You cannot render a <Router> inside another <Router>"
-
-
 export default function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/solutions" element={<Solutions />} />
-        <Route path="/solutions/:slug" element={<SolutionDetail />} />
-        <Route path="/technologies" element={<Technologies />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/job-application" element={<JobApplication />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/article/:id" element={<ArticleDetails />} />
-        <Route path="/contact" element={<Contact />} />
-        
-        
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+    <>
+      {/* Scroll to top whenever the route changes */}
+      <ScrollToTop />
 
-        <Route element={<ProtectedRoute />}>
-          <Route element={<RoleRoute allowedRole="user" />}>
-            <Route path="/user" element={<UserLayout />}>
-              <Route index element={<Navigate to="dashboard" replace />} />
-              <Route path="dashboard" element={<UserDashboard />} />
-              <Route path="profile" element={<UserProfile />} />
-              <Route path="jobs" element={<UserJobs />} />
-              <Route path="jobs/:jobId" element={<JobDetails />} />
-              <Route path="jobs/:jobId/apply" element={<ApplyJob />} />
-              <Route path="saved-jobs" element={<SavedJobs />} />
-              <Route path="applications" element={<MyApplications />} />
-              <Route path="applications/:applicationId" element={<ApplicationDetails />} />
+      <Routes>
+        <Route element={<Layout />}>
+
+          {/* PUBLIC ROUTES */}
+          <Route path="/" element={<Home />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/:slug" element={<SolutionDetail />} />
+          <Route path="/technologies" element={<Technologies />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          {/* <Route path="/partners-clients" element={<PartnersClient />} /> */}
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/job-application" element={<JobApplication />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/article/:id" element={<ArticleDetails />} />
+          <Route path="/contact" element={<Contact />} />
+
+          {/* AUTH ROUTES */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* USER ROUTES */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<RoleRoute allowedRole="user" />}>
+              <Route path="/user" element={<UserLayout />}>
+
+                <Route
+                  index
+                  element={<Navigate to="dashboard" replace />}
+                />
+
+                <Route
+                  path="dashboard"
+                  element={<UserDashboard />}
+                />
+
+                <Route
+                  path="profile"
+                  element={<UserProfile />}
+                />
+
+                <Route
+                  path="jobs"
+                  element={<UserJobs />}
+                />
+
+                <Route
+                  path="jobs/:jobId"
+                  element={<JobDetails />}
+                />
+
+                <Route
+                  path="jobs/:jobId/apply"
+                  element={<ApplyJob />}
+                />
+
+                <Route
+                  path="saved-jobs"
+                  element={<SavedJobs />}
+                />
+
+                <Route
+                  path="applications"
+                  element={<MyApplications />}
+                />
+
+                <Route
+                  path="applications/:applicationId"
+                  element={<ApplicationDetails />}
+                />
+
+              </Route>
             </Route>
           </Route>
-        </Route>
 
-        <Route element={<ProtectedRoute />}>
-          <Route element={<RoleRoute allowedRole="admin" />}>
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/users" element={<ManageUsers />} />
-            <Route path="/admin/jobs" element={<ManageJobs />} />
-            <Route path="/admin/applications" element={<ManageApplications />} />
-            <Route path="/admin/internships" element={<ManageInternships />} />
-            <Route path="/admin/contacts" element={<ManageContacts />} />
-            <Route path="/admin/blogs" element={<ManageBlogs />} />
-            <Route path="/admin/services" element={<ManageServices />} />
-            <Route path="/admin/testimonials" element={<ManageTestimonials />} />
-            <Route path="/admin/portfolio" element={<ManagePortfolio />} />
-            <Route path="/admin/technologies" element={<ManageTechnologies />} />
-            <Route path="/admin/partners" element={<ManagePartners />} />
+          {/* ADMIN ROUTES */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<RoleRoute allowedRole="admin" />}>
+
+              <Route
+                path="/admin"
+                element={<AdminDashboard />}
+              />
+
+              <Route
+                path="/admin/users"
+                element={<ManageUsers />}
+              />
+
+              <Route
+                path="/admin/jobs"
+                element={<ManageJobs />}
+              />
+
+              <Route
+                path="/admin/applications"
+                element={<ManageApplications />}
+              />
+
+              <Route
+                path="/admin/internships"
+                element={<ManageInternships />}
+              />
+
+              <Route
+                path="/admin/contacts"
+                element={<ManageContacts />}
+              />
+
+              <Route
+                path="/admin/blogs"
+                element={<ManageBlogs />}
+              />
+
+              <Route
+                path="/admin/services"
+                element={<ManageServices />}
+              />
+
+              <Route
+                path="/admin/testimonials"
+                element={<ManageTestimonials />}
+              />
+
+              <Route
+                path="/admin/portfolio"
+                element={<ManagePortfolio />}
+              />
+
+              <Route
+                path="/admin/technologies"
+                element={<ManageTechnologies />}
+              />
+
+              <Route
+                path="/admin/partners"
+                element={<ManagePartners />}
+              />
+
+            </Route>
           </Route>
+
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
