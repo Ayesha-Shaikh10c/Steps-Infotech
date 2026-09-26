@@ -165,9 +165,7 @@ function ProjectShowcase() {
               <p className="mb-6 font-body text-sm font-semibold text-brand-teal">
                 {featured.outcome}
               </p>
-              <button className="flex w-fit items-center gap-2 font-body text-sm font-semibold text-white transition-colors hover:text-brand-teal">
-                View Case Study <FaArrowRight className="text-xs" />
-              </button>
+              
             </div>
           </div>
         )}
