@@ -164,8 +164,7 @@ function ProjectShowcase() {
               </div>
               <p className="mb-6 font-body text-sm font-semibold text-brand-teal">
                 {featured.outcome}
-              </p>
-              
+              </p>              
             </div>
           </div>
         )}
